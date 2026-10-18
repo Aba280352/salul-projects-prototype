@@ -1,0 +1,135 @@
+/* הדר בסגנון אוורירי (רפרנס: נדב): לוגו | תפריט במרכז | כפתור צור קשר.
+   מובייל: לוגו | המבורגר. נקודת שבירה כמו באלמנטור: דסקטופ מ-1025px. */
+
+:root { --header-h: 72px; }
+@media (min-width: 1025px) { :root { --header-h: 96px; } }
+
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  height: var(--header-h);
+  /* זכוכית כהה מעל מסך הפתיחה */
+  background: rgba(20, 20, 20, .45);
+  -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid var(--line-on-dark);
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  height: 100%;
+  padding-inline: var(--side-pad);
+}
+
+/* לוגו: בצד ההתחלה (ימין) */
+.logo { grid-column: 1; display: flex; align-items: center; height: 100%; padding-block: 10px; }
+.logo img { display: block; height: calc(var(--header-h) - 20px); width: auto; }
+
+/* כפתור צור קשר בהדר: מוצג רק בדסקטופ */
+.site-header__cta { display: none; }
+
+/* המבורגר: בצד הסיום (שמאל) */
+.nav-toggle {
+  grid-column: 3;
+  display: grid; place-items: center;
+  width: 48px; height: 48px; margin-inline-end: -8px;
+  background: transparent; border: 0; padding: 0; cursor: pointer; color: var(--paper);
+}
+.nav-toggle svg { width: 32px; height: 32px; }
+.nav-toggle .icon-close { display: none; }
+.nav-toggle[aria-expanded="true"] .icon-open { display: none; }
+.nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+.nav-toggle:focus-visible, .nav a:focus-visible, .nav__sub-btn:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 2px; }
+
+/* ===== מובייל: חלונית מתחת להדר ===== */
+.nav {
+  position: fixed; inset: var(--header-h) 0 0 0;
+  display: flex; flex-direction: column;
+  padding: 0 var(--side-pad) 24px;
+  background: var(--ink);
+  overflow-y: auto;
+  visibility: hidden; opacity: 0; transform: translateY(-8px);
+  transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+}
+.nav.is-open { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
+
+.nav__list { list-style: none; margin: 0; padding: 0; }
+.nav__item { position: relative; display: flex; flex-wrap: wrap; align-items: center; border-bottom: 1px solid var(--line-on-dark); }
+.nav__link {
+  flex: 1; padding: 18px 0;
+  font-size: var(--h5); font-weight: 500; line-height: 1.3;
+  color: var(--paper); text-decoration: none;
+}
+.nav__sub-btn {
+  display: grid; place-items: center; width: 48px; height: 48px;
+  background: transparent; border: 0; padding: 0; cursor: pointer; color: var(--paper);
+}
+.nav__sub-btn svg { width: 24px; height: 24px; transition: transform .2s ease; }
+.nav__sub-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+.nav__sub { display: none; flex-basis: 100%; list-style: none; margin: 0; padding: 0 0 12px; }
+.nav__item.is-open > .nav__sub { display: block; }
+.nav__sub a {
+  display: block; padding: 12px 16px 12px 0;
+  font-size: var(--body); font-weight: 300; line-height: 1.3;
+  color: rgba(254, 254, 254, .85); text-decoration: none;
+}
+
+.nav__cta { margin-top: 24px; }
+.nav__cta .btn { width: 100%; justify-content: space-between; }
+
+/* ===== דסקטופ ===== */
+@media (min-width: 1025px) {
+  .nav-toggle { display: none; }
+
+  .site-header__inner { grid-template-columns: 1fr auto 1fr; }
+  .site-header__cta { grid-column: 3; display: flex; justify-self: end; }
+  .logo { justify-self: start; }
+
+  .nav {
+    grid-column: 2; position: static; inset: auto; height: 100%;
+    flex-direction: row; align-items: stretch;
+    padding: 0; background: transparent; overflow: visible;
+    visibility: visible; opacity: 1; transform: none; transition: none;
+  }
+  .nav__list { display: flex; align-items: stretch; gap: 8px; }
+  .nav__item { flex-wrap: nowrap; border-bottom: 0; }
+
+  .nav__link {
+    flex: none; display: flex; align-items: center; height: 100%;
+    padding: 0 16px;
+    font-size: var(--body); font-weight: 300;
+  }
+  .nav__link::after {
+    content: ""; position: absolute; inset-inline: 16px; bottom: -1px; height: 2px;
+    background: var(--gold-grad); transform: scaleX(0); transition: transform .2s ease;
+  }
+  .nav__link:hover::after, .nav__link[aria-current="page"]::after, .nav__item.is-open > .nav__link::after { transform: scaleX(1); }
+  .nav__link[aria-current="page"] { font-weight: 500; }
+
+  .nav__item--sub .nav__link { padding-inline-end: 2px; }
+  .nav__item--sub .nav__link::after { inset-inline-end: 2px; }
+  .nav__sub-btn { width: 28px; height: 100%; margin-inline-end: 8px; }
+
+  .nav__sub {
+    display: block; position: absolute; top: 100%; inset-inline-start: 0; z-index: 10;
+    min-width: 300px; padding: 0; margin-top: 0;
+    background: rgba(20, 20, 20, .92); border: 1px solid var(--line-on-dark); border-radius: var(--radius);
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+    overflow: hidden;
+    visibility: hidden; opacity: 0; transform: translateY(-4px);
+    transition: opacity .15s ease, transform .15s ease, visibility 0s linear .15s;
+  }
+  .nav__item.is-open > .nav__sub,
+  .nav__item--sub:hover > .nav__sub,
+  .nav__item--sub:focus-within > .nav__sub { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
+  .nav__item--sub:hover > .nav__sub-btn svg,
+  .nav__item.is-open > .nav__sub-btn svg { transform: rotate(180deg); }
+
+  .nav__sub li + li { border-top: 1px solid var(--line-on-dark); }
+  .nav__sub a { padding: 16px 20px; font-weight: 500; }
+  .nav__sub a { transition: background-color .25s ease, color .25s ease; }
+  .nav__sub a:hover, .nav__sub a:focus-visible { background: var(--gold-grad); color: var(--ink); outline-offset: -2px; }
+
+  .nav__cta { display: none; }
+}

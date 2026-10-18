@@ -1,0 +1,31 @@
+/* מפריד אליפסה בין סקשנים (רפרנס: TIKTAK4U): התחתית של כל סקשן מתעגלת כלפי מטה בקשת רכה,
+   והסקשן הבא נכנס מתחתיו בגובה הקשת, כך שהצבע שלו מופיע בפינות.
+   הקשת היא מסכה (mask) ולא clip-path עם נתיב, כדי שעומק הקשת יהיה קבוע בכל גובה סקשן ובכל רוחב מסך.
+   כל סקשן עם קשת מקבל את עומק הקשת גם בריווח התחתון, כך שהמרווחים בין כל הסקשנים אחידים.
+   הסדר בעומק יורד מלמעלה למטה, כדי שכל סקשן יהיה מעל זה שאחריו. נטען אחרי כל הסקשנים. */
+:root { --curve: clamp(28px, 4vw, 72px); }
+
+.stats, .services, .listings, .projects, .sellers, .about, .reviews, .magazine {
+  -webkit-mask:
+    linear-gradient(#000 0 0) top / 100% calc(100% - var(--curve) + 1px) no-repeat,
+    radial-gradient(ellipse 54% 100% at 50% 0, #000 99.5%, transparent 100%) bottom / 100% var(--curve) no-repeat;
+  mask:
+    linear-gradient(#000 0 0) top / 100% calc(100% - var(--curve) + 1px) no-repeat,
+    radial-gradient(ellipse 54% 100% at 50% 0, #000 99.5%, transparent 100%) bottom / 100% var(--curve) no-repeat;
+}
+.stats, .services, .listings, .projects, .sellers, .about, .reviews, .magazine {
+  padding-bottom: calc(var(--section-gap) / 2 + var(--curve));
+}
+.services, .listings, .projects, .sellers, .about, .reviews, .magazine, .faq {
+  margin-top: calc(-1 * var(--curve));
+  padding-top: calc(var(--section-gap) / 2 + var(--curve));
+}
+.stats { position: relative; z-index: 8; }
+.services { position: relative; z-index: 7; }
+.listings { position: relative; z-index: 6; }
+.projects { position: relative; z-index: 5; }
+.sellers { position: relative; z-index: 4; }
+.about { position: relative; z-index: 3; }
+.reviews { position: relative; z-index: 2; }
+.magazine { position: relative; z-index: 1; }
+.faq { position: relative; z-index: 0; }

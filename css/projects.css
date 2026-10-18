@@ -1,0 +1,97 @@
+/* פרויקטים בשיווק: מצב כהה, תצוגה ולא רשימה.
+   מחשב: רשימת פרויקטים בימין, והדמיה גדולה בשמאל שמתחלפת לפי הפרויקט שעומדים עליו (projects.js).
+   מובייל: כל פרויקט ככרטיס עם הדמיה, בלי JS. כל הטקסטים והקישורים תמיד ב-HTML (SEO). */
+
+.projects {
+  position: relative;
+  background: var(--ink); color: var(--paper);
+  padding: calc(var(--section-gap) / 2) var(--side-pad);
+}
+
+/* ---------- כותרת ---------- */
+.projects__head { margin-bottom: 40px; }
+.projects__eyebrow {
+  display: inline-flex; align-items: center; margin: 0 0 var(--gap-md); padding: 8px 22px;
+  border-radius: var(--radius-pill); background: var(--gold-grad);
+  font-size: 16px; font-weight: 500; line-height: 1.3; color: var(--ink);
+}
+.projects__title { margin: 0; font-size: var(--h2); font-weight: 700; line-height: 1; color: var(--paper); }
+.projects__intro { margin: var(--gap-md) 0 0; max-width: 460px; font-size: var(--body); font-weight: 300; line-height: 1.3; color: rgba(254, 254, 254, .8); }
+
+/* ---------- רשימה ---------- */
+.projects__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 48px; }
+.project { display: flex; flex-direction: column; }
+
+.project__media {
+  order: -1; position: relative; margin: 0 0 20px;
+  aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; background: var(--ink-raised);
+}
+.project__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.project__link {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px;
+  color: inherit; text-decoration: none;
+}
+.project__num {
+  align-self: start; padding-top: .45em;
+  font-size: var(--note); font-weight: 500; font-variant-numeric: tabular-nums;
+  background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--gold-1);
+}
+.project__name { margin: 0; font-size: var(--h4); font-weight: 700; line-height: 1.05; color: var(--paper); transition: color .45s; }
+.project__place { display: block; margin-top: 8px; font-size: 16px; font-weight: 300; color: rgba(254, 254, 254, .7); }
+.project__go { display: grid; place-items: center; color: var(--paper); }
+.project__go svg { width: 28px; height: 28px; transition: transform .45s cubic-bezier(.4, 0, .2, 1); }
+.project__link:hover .project__go svg, .project__link:focus-visible .project__go svg { transform: translateX(-6px); }
+.project__link:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 6px; border-radius: 4px; }
+
+.project__details { padding-top: 16px; }
+.project__details > div { min-height: 0; }
+.project__desc { margin: 0 0 16px; max-width: 520px; font-size: var(--body); font-weight: 300; line-height: 1.3; color: rgba(254, 254, 254, .8); }
+.project__tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.project__tags li {
+  padding: 6px 14px; border-radius: var(--radius-pill);
+  box-shadow: inset 0 0 0 1px var(--line-on-dark);
+  font-size: var(--note); font-weight: 500; color: var(--paper);
+}
+
+/* ---------- מחשב: רשימה + במה ---------- */
+@media (min-width: 1025px) {
+  .projects__head { margin-bottom: 64px; }
+  .projects__show {
+    position: relative; min-height: 640px;
+    padding-inline-end: calc((100% - 5vw) * .56 + 5vw);
+  }
+  .projects__list { gap: 0; border-bottom: 1px solid var(--line-on-dark); }
+  .project { border-top: 1px solid var(--line-on-dark); }
+  .project__link { padding: 26px 0; gap: 24px; }
+  .project__name { color: rgba(254, 254, 254, .42); }
+  .project__place { color: rgba(254, 254, 254, .42); transition: color .45s; }
+  .project__go { opacity: 0; transition: opacity .45s; }
+  .project.is-active .project__name { color: var(--paper); }
+  .project.is-active .project__place { color: rgba(254, 254, 254, .7); }
+  .project.is-active .project__go { opacity: 1; }
+
+  /* הפרטים נפתחים רק לפרויקט הפעיל */
+  .project__details {
+    display: grid; grid-template-rows: 0fr; padding: 0 0 0;
+    transition: grid-template-rows .6s cubic-bezier(.22, 1, .36, 1), padding .6s;
+  }
+  .project__details > div { overflow: hidden; }
+  .project.is-active .project__details { grid-template-rows: 1fr; padding-bottom: 28px; }
+  .project__details .project__desc, .project__details .project__tags { padding-inline-start: calc(var(--note) * 1.4 + 24px); }
+
+  /* ההדמיה של כל פרויקט יושבת בבמה בשמאל, ורק של הפעיל גלויה */
+  .project__media {
+    position: absolute; top: 0; bottom: 0; inset-inline-end: 0; margin: 0;
+    width: calc((100% - 5vw) * .56); aspect-ratio: auto;
+    border-top-left-radius: var(--corner, 96px);
+    opacity: 0; transition: opacity .8s cubic-bezier(.22, 1, .36, 1);
+  }
+  .project__media img { transform: scale(1.06); transition: transform 1.4s cubic-bezier(.22, 1, .36, 1); }
+  .project.is-active .project__media { opacity: 1; z-index: 1; }
+  .project.is-active .project__media img { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project__media, .project__media img, .project__details { transition: none !important; }
+}

@@ -1,0 +1,150 @@
+/* טוקנים ובסיס, לפי "דיזיין סיסטם - סלול שיווק פרויקטים.md" */
+
+@font-face { font-family: "Discovery"; font-weight: 300; font-style: normal; font-display: swap;
+  src: url("../fonts/Discovery_Fs-Light.woff2") format("woff2"), url("../fonts/Discovery_Fs-Light.woff") format("woff"); }
+@font-face { font-family: "Discovery"; font-weight: 500; font-style: normal; font-display: swap;
+  src: url("../fonts/Discovery_Fs-Medium.woff2") format("woff2"), url("../fonts/Discovery_Fs-Medium.woff") format("woff"); }
+@font-face { font-family: "Discovery"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("../fonts/Discovery_Fs-Bold.woff2") format("woff2"), url("../fonts/Discovery_Fs-Bold.woff") format("woff"); }
+
+:root {
+  --font-main: "Discovery", "Assistant", Arial, sans-serif;
+
+  --gold-1: #C6A041;
+  --gold-2: #E6C465;
+  --gold-grad: linear-gradient(90deg, var(--gold-1) 0%, var(--gold-2) 100%);
+  --gold-decor: #D09C4A;
+  /* גרדיאנט זהב כהה לטקסט על רקע בהיר: 5.9:1 עד 3.3:1 מול #F9F8F7 (עובר AA לטקסט גדול) */
+  --gold-grad-text: linear-gradient(270deg, #8C6A12 0%, #C9961A 50%, #E3B122 100%);
+  --gold-glow: drop-shadow(0 0 8px rgba(227, 177, 34, .28));
+  --ink: #141414;
+  --paper: #FEFEFE;
+  --paper-alt: #F9F8F7;
+  --text-muted: #666666;
+  --line: rgba(20, 20, 20, .14);
+  --line-on-dark: rgba(254, 254, 254, .18);
+  --ink-raised: #1E1E1E;
+
+  --section-gap: 90px;
+  --section-gap-related: 40px;
+  --gap-sm: 15px;
+  --gap-md: 20px;
+  --side-pad: 20px;
+
+  --radius: 12px;
+  --radius-pill: 100px;
+
+  --h1: 42px; --h2: 36px; --h3: 30px; --h4: 26px; --h5: 22px;
+  --body: 18px; --note: 14px;
+}
+
+@media (min-width: 1025px) {
+  :root {
+    --h1: 120px; --h2: 72px; --h3: 60px; --h4: 48px; --h5: 24px;
+    --section-gap: 9vw; --section-gap-related: 4.5vw; --side-pad: 5vw;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-padding-top: var(--header-h, 0px); }
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 300;
+  font-size: var(--body);
+  line-height: 1.3;
+  color: var(--ink);
+  background: var(--paper);
+  direction: rtl;
+}
+
+h1, h2, h3, h4, h5, p { margin: 0; }
+
+/* אף פעם לא מילה בודדת בשורה: כותרות מאוזנות, פסקאות בלי יתומה בסוף */
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
+.h1, .h2, .h3, .h4 { font-weight: 700; line-height: 1; color: var(--ink); }
+.h5 { font-weight: 500; line-height: 1; }
+.h1 { font-size: var(--h1); }
+.h2 { font-size: var(--h2); }
+.h3 { font-size: var(--h3); }
+.h4 { font-size: var(--h4); }
+.h5 { font-size: var(--h5); }
+.text-strong { font-weight: 500; }
+.note { font-size: var(--note); font-weight: 300; line-height: 1.3; color: var(--text-muted); }
+.gold-text { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.section { padding-block: var(--section-gap); padding-inline: var(--side-pad); }
+.section--related { padding-block-start: var(--section-gap-related); }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* כפתור: גלולה עם עיגול אייקון תמיד משמאל לטקסט (בסוף השורה ב-RTL) */
+.btn {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 40px;
+  padding-block: 8px; padding-inline: 40px 8px; min-height: 56px; min-width: 200px;
+  border-radius: var(--radius-pill);
+  font: 500 var(--body)/1.3 var(--font-main);
+  --btn-fg: var(--ink);
+  color: var(--ink); text-decoration: none; white-space: nowrap;
+  border: 0; cursor: pointer;
+}
+.btn--primary { background: var(--gold-grad); }
+.btn--secondary { background: transparent; box-shadow: inset 0 0 0 1px var(--ink); }
+.btn__circle {
+  display: grid; place-items: center; flex: none;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--ink); color: var(--paper);
+}
+.btn--secondary .btn__circle { background: var(--paper-alt); color: var(--ink); }
+/* מתאר בהיר: לרקע כהה */
+.btn--outline-light { --btn-fg: var(--paper); background: transparent; color: var(--paper); box-shadow: inset 0 0 0 1px rgba(254, 254, 254, .45); }
+.btn--outline-light .btn__circle { background: var(--paper); color: var(--ink); }
+.btn--outline-light:hover { box-shadow: inset 0 0 0 1px var(--gold-2); }
+
+/* זכוכית: לרקע כהה */
+.btn--glass {
+  --btn-fg: var(--paper);
+  background: rgba(254, 254, 254, .08); color: var(--paper);
+  -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: inset 0 0 0 1px rgba(254, 254, 254, .28);
+}
+.btn--glass .btn__circle { background: var(--paper); color: var(--ink); }
+.btn--glass:hover { background: rgba(254, 254, 254, .14); }
+
+/* גלגול טקסט בריחוף, בכל הכפתורים: שני עותקים של הטקסט, הישן עולה ויוצא והחדש נכנס מלמטה. הטקסט האמיתי נשאר ב-HTML */
+.btn__label[data-text] { position: relative; display: inline-block; overflow: hidden; color: transparent; white-space: nowrap; }
+.btn__label[data-text]::before, .btn__label[data-text]::after {
+  content: attr(data-text); position: absolute; inset-inline: 0; color: var(--btn-fg, currentColor);
+  transition: transform .45s cubic-bezier(.4, 0, .2, 1);
+}
+.btn__label[data-text]::before { top: 0; }
+.btn__label[data-text]::after { top: 100%; }
+.btn:hover .btn__label[data-text]::before, .btn:hover .btn__label[data-text]::after,
+.btn:focus-visible .btn__label[data-text]::before, .btn:focus-visible .btn__label[data-text]::after { transform: translateY(-100%); }
+
+/* שקוף: טקסט ועיגול בלבד, לשימוש במקומות אווריריים כמו ההדר */
+.btn--ghost { background: transparent; padding-inline: 0; min-height: 48px; padding-block: 0; }
+.btn--ghost .btn__circle { width: 44px; height: 44px; background: var(--ink); color: var(--gold-2); }
+/* ריחוף: הכפתור נמתח (הטקסט מתרחק מהעיגול) והטקסט מתגלגל. העיגול לא זז */
+.btn { transition: padding .45s cubic-bezier(.4, 0, .2, 1), gap .45s cubic-bezier(.4, 0, .2, 1); }
+.btn:hover, .btn:focus-visible { padding-inline-start: 56px; gap: 52px; }
+.btn__circle svg { width: 24px; height: 24px; }
+.btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn__label[data-text]::before, .btn__label[data-text]::after { transform: none !important; }
+  * { transition: none !important; animation: none !important; }
+}
+
+/* גלילה חלקה (Lenis): הגדרות בסיס של הספרייה */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }

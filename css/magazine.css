@@ -1,0 +1,70 @@
+/* מהמגזין (אזור הידע): מצב בהיר. 3 מאמרים אחרונים בכרטיסים: תמונה, תגית קטגוריה, תאריך וזמן קריאה,
+   כותרת ותקציר. כפתור לארכיון המאמרים. כל כרטיס הוא קישור רגיל (SEO). */
+
+.magazine {
+  background: var(--paper-alt);
+  padding: calc(var(--section-gap) / 2) var(--side-pad);
+}
+
+/* ---------- כותרת ---------- */
+.magazine__head { display: grid; gap: var(--gap-md); margin-bottom: 32px; }
+.magazine__eyebrow {
+  display: inline-flex; align-items: center; margin: 0 0 var(--gap-md); padding: 8px 22px;
+  border-radius: var(--radius-pill); background: var(--gold-grad);
+  font-size: 16px; font-weight: 500; line-height: 1.3; color: var(--ink);
+}
+.magazine__title { margin: 0; font-size: var(--h2); font-weight: 700; line-height: 1; color: var(--ink); }
+.magazine__intro { margin: var(--gap-md) 0 0; max-width: 520px; font-size: var(--body); font-weight: 300; line-height: 1.3; color: var(--ink); }
+.magazine__head .btn { justify-self: start; }
+
+/* ---------- כרטיסים ---------- */
+.magazine__grid {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 84%; gap: 20px;
+  list-style: none; margin: 0 calc(-1 * var(--side-pad)); padding: 0 var(--side-pad) 4px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--side-pad); scrollbar-width: none;
+}
+.magazine__grid::-webkit-scrollbar { display: none; }
+.article { scroll-snap-align: start; }
+.article__link { display: flex; flex-direction: column; height: 100%; color: inherit; text-decoration: none; }
+
+.article__media { position: relative; margin: 0 0 28px; aspect-ratio: 3 / 2; border-radius: var(--radius); overflow: hidden; background: var(--line); }
+.article__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .9s cubic-bezier(.22, 1, .36, 1); }
+.article__link:hover .article__media img { transform: scale(1.05); }
+
+/* תגית קטגוריה: גלולה שחורה עם נקודת זהב, ברורה על כל תמונה */
+.article__tag {
+  position: absolute; top: 14px; inset-inline-start: 14px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px; border-radius: var(--radius-pill);
+  background: rgba(20, 20, 20, .78); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  font-size: var(--note); font-weight: 500; line-height: 1.2; color: var(--paper);
+}
+.article__tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold-grad); }
+
+.article__meta { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font-size: var(--note); font-weight: 300; color: rgba(20, 20, 20, .7); }
+.article__meta span + span::before { content: ""; display: inline-block; width: 4px; height: 4px; margin-inline-end: 10px; border-radius: 50%; background: currentColor; vertical-align: middle; opacity: .6; }
+.article__title {
+  margin: 0 0 16px; font-size: var(--h5); font-weight: 700; line-height: 1.25; color: var(--ink);
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+}
+.article__excerpt {
+  margin: 0 0 28px; font-size: 16px; font-weight: 300; line-height: 1.6; color: var(--ink);
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden;
+}
+.article__more {
+  margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 16px; font-weight: 500; color: var(--ink);
+}
+.article__more svg { width: 26px; height: 26px; transition: transform .45s cubic-bezier(.4, 0, .2, 1); }
+.article__link:hover .article__more svg { transform: translateX(-6px); }
+.article__link:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; border-radius: var(--radius); }
+
+@media (min-width: 1025px) {
+  .magazine__head { grid-template-columns: 1fr auto; align-items: end; gap: 40px; margin-bottom: 48px; }
+  .magazine__head .btn { justify-self: end; }
+  .magazine__grid {
+    grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); grid-auto-columns: auto;
+    gap: 56px 48px; margin: 0; padding: 0; overflow: visible;
+  }
+}

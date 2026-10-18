@@ -1,0 +1,91 @@
+/* מוכרים דירה?: מצב בהיר. תהליך מתחלף אוטומטי (השראה: "תהליך מתחלף אוטומטי" ממאגר הטמפלייטים).
+   ששת שלבי המכירה ברשימה; השלב הפעיל נפתח, קו התקדמות זהב מתמלא, ותמונת השלב מתחלפת בבמה. אחרי שהקו מתמלא עוברים לשלב הבא (sellers.js).
+   כל הטקסטים תמיד ב-HTML (SEO). בלי JS כל השלבים פתוחים ורק התמונה הראשונה מוצגת. */
+
+.sellers {
+  background: var(--paper);
+  padding: calc(var(--section-gap) / 2) var(--side-pad);
+}
+.sellers__inner { display: grid; gap: 32px; }
+
+.sellers__eyebrow {
+  display: inline-flex; align-items: center; margin: 0 0 var(--gap-md); padding: 8px 22px;
+  border-radius: var(--radius-pill); background: var(--gold-grad);
+  font-size: 16px; font-weight: 500; line-height: 1.3; color: var(--ink);
+}
+.sellers__title { margin: 0; font-size: var(--h2); font-weight: 700; line-height: 1; color: var(--ink); }
+.sellers__lead { margin: var(--gap-md) 0 0; max-width: 560px; font-size: var(--body); font-weight: 300; line-height: 1.3; color: var(--ink); }
+
+/* ---------- שלבים ---------- */
+.sellers__steps { list-style: none; margin: 32px 0; padding: 0; border-bottom: 1px solid var(--line); }
+.step { position: relative; border-top: 1px solid var(--line); }
+.step__bar { position: absolute; top: -2px; inset-inline: 0; height: 4px; border-radius: 4px; overflow: hidden; pointer-events: none; }
+.step__bar span { display: block; height: 100%; border-radius: 4px; background: var(--gold-grad); transform: scaleX(0); transform-origin: right center; }
+.step__title { margin: 0; }
+.step__btn {
+  display: flex; align-items: center; gap: 16px; width: 100%; padding: 24px 0;
+  border: 0; background: none; cursor: pointer; text-align: start;
+  font: 500 var(--h5)/1.2 var(--font-main); color: var(--ink);
+  transition: color .45s;
+}
+.step__num { min-width: 1.6em; font-size: var(--note); font-weight: 500; font-variant-numeric: tabular-nums; color: var(--gold-decor); }
+.step__btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 4px; }
+.step__body { padding: 0 calc(1.6em + 16px) 26px 0; }
+.step__body p { margin: 0; max-width: 480px; font-size: var(--body); font-weight: 300; line-height: 1.3; color: var(--ink); }
+
+/* עם JS: רק השלב הפעיל פתוח, והשאר מעומעמים */
+.sellers.is-ready .step__body { display: grid; grid-template-rows: 0fr; padding-bottom: 0; transition: grid-template-rows .6s cubic-bezier(.22, 1, .36, 1), padding .6s; }
+.sellers.is-ready .step__body > div { overflow: hidden; min-height: 0; }
+.sellers.is-ready .step__body p { opacity: 0; transform: translateY(8px); transition: opacity .5s, transform .6s cubic-bezier(.22, 1, .36, 1); }
+.sellers.is-ready .step:not(.is-active) .step__btn { color: rgba(20, 20, 20, .45); }
+.sellers.is-ready .step:not(.is-active) .step__btn:hover { color: var(--ink); }
+.sellers.is-ready .step.is-active .step__body { grid-template-rows: 1fr; padding-bottom: 26px; }
+.sellers.is-ready .step.is-active .step__body p { opacity: 1; transform: none; transition-delay: .15s; }
+.sellers.is-ready .step.is-done .step__bar span { transform: scaleX(1); }
+.sellers.is-playing .step.is-active .step__bar span { animation: step-fill var(--step-time, 5.5s) linear forwards; }
+@keyframes step-fill { to { transform: scaleX(1); } }
+
+/* ---------- במה: תמונה לכל שלב ---------- */
+.sellers__stage { position: relative; margin: 0; aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; background: var(--paper-alt); }
+.sellers__stage img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: inherit;
+  opacity: 0; z-index: 0; clip-path: inset(100% 0 0 0); transform: scale(1.12);
+}
+/* התמונה הקודמת נשארת מתחת, והחדשה נחשפת מעליה מלמטה למעלה עם זום עדין (השראה: מסך מפוצל עם תמונות מתחלפות) */
+.sellers__stage img.is-prev { opacity: 1; z-index: 1; clip-path: inset(0); transform: none; }
+.sellers__stage img.is-active {
+  opacity: 1; z-index: 2; clip-path: inset(0); transform: none;
+  transition: clip-path .9s cubic-bezier(.22, 1, .36, 1), transform 1.6s cubic-bezier(.22, 1, .36, 1);
+}
+.sellers:not(.is-ready) .sellers__stage img:first-child { opacity: 1; clip-path: none; transform: none; }
+.sellers__count {
+  position: absolute; bottom: 16px; inset-inline-start: 16px; z-index: 1;
+  padding: 8px 16px; border-radius: var(--radius-pill);
+  background: rgba(20, 20, 20, .45); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  font-size: var(--note); font-weight: 500; font-variant-numeric: tabular-nums; color: var(--paper);
+}
+
+@media (min-width: 1025px) {
+  .sellers__inner { grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: 5vw; align-items: start; }
+  .sellers__stage {
+    position: sticky; top: calc(var(--header-h) + 24px);
+    aspect-ratio: auto; height: min(42vw, calc(100svh - var(--header-h) - 48px)); min-height: 420px;
+    border-top-left-radius: 96px;
+  }
+  .step__btn { padding: 32px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sellers__stage img, .step__body, .step__body p { transition: none !important; }
+  .sellers__stage img { transform: none !important; }
+}
+
+/* השלב הפעיל מודגש: כרטיס לבן עם מסגרת דקה, כותרת Bold וקו ההתקדמות בתוך הכרטיס. השאר נשארים שורות שקטות */
+.step { padding-inline: 16px; transition: background-color .5s ease, box-shadow .5s ease; }
+.sellers.is-ready .step.is-active { background: #FFFFFF; border-radius: 14px; box-shadow: inset 0 0 0 1px var(--line); border-top-color: transparent; }
+.sellers.is-ready .step.is-active + .step { border-top-color: transparent; }
+/* שלבים שהסתיימו: הקו האפור מתחת לפס הזהב מוסתר, כדי שלא יציץ מהקצוות המעוגלים */
+.sellers.is-ready .step.is-done { border-top-color: transparent; }
+.sellers.is-ready .step.is-active .step__bar { top: 0; inset-inline: 14px; }
+.sellers.is-ready .step.is-active .step__btn { font-weight: 700; }
+@media (min-width: 1025px) { .step { padding-inline: 24px; } }
