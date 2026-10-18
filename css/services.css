@@ -28,7 +28,7 @@
   position: relative; overflow: hidden; isolation: isolate;
   display: flex; flex-direction: column; justify-content: flex-end;
   min-height: 300px; padding: 24px; border-radius: var(--radius);
-  background: var(--bg) center / cover no-repeat;
+  background: center / cover no-repeat; /* התמונה עצמה ב-style של האלמנט, כדי שהנתיב יתפרש מול הדף */
 }
 .service::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(20, 20, 20, .25), rgba(20, 20, 20, .82)); transition: background-color .5s; }
 .service__title { margin: 0 0 10px; font-size: var(--h5); font-weight: 700; line-height: 1.2; color: var(--paper); }

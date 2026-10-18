@@ -65,7 +65,7 @@ main > section:last-child, .salul-faq .faq { padding-bottom: calc((var(--section
 /* הדמיה ברקע, כהה מאוד, ושם המותג בסריף ענק */
 .site-footer__main::before {
   content: ""; position: absolute; inset: 0; z-index: -2;
-  background: linear-gradient(180deg, rgba(20, 20, 20, .82), rgba(20, 20, 20, .94)), var(--footer-img) center / cover no-repeat;
+  background: center / cover no-repeat; /* התמונה והשכבה הכהה ב-style של האלמנט */
 }
 .site-footer__mark {
   position: absolute; inset-inline: 0; top: 70px; z-index: -1; margin: 0; text-align: center; white-space: nowrap;
