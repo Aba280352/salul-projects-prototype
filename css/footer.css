@@ -58,7 +58,7 @@ main > section:last-child, .salul-faq .faq { padding-bottom: calc((var(--section
 /* ---------- פוטר כהה ---------- */
 .site-footer__main {
   position: relative; isolation: isolate; overflow: hidden;
-  margin: -48px calc(-1 * var(--side-pad)) 0; padding: 96px var(--side-pad) 0;
+  margin: -48px calc(-1 * var(--side-pad)) 0; padding: 72px var(--side-pad) 0;
   border-top-left-radius: 72px;
   background: var(--ink); color: var(--paper);
 }
@@ -68,8 +68,10 @@ main > section:last-child, .salul-faq .faq { padding-bottom: calc((var(--section
   background: center / cover no-repeat; /* התמונה והשכבה הכהה ב-style של האלמנט */
 }
 .site-footer__mark {
-  position: absolute; inset-inline: 0; top: 70px; z-index: -1; margin: 0; text-align: center; white-space: nowrap;
-  font-family: "Cinzel", "Times New Roman", serif; font-weight: 600; font-size: clamp(64px, 15vw, 280px); line-height: 1; letter-spacing: .02em;
+  /* גרסה 2: פס עצמאי בראש הפוטר, כדי שהאייקונים, הלוגו והעמודות לא יעלו עליו. נשאר רחב מהמסך וממורכז */
+  position: relative; z-index: -1; display: flex; justify-content: center;
+  margin: 0 calc(-1 * var(--side-pad)) clamp(28px, 3.5vw, 56px); white-space: nowrap;
+  font-family: "Cinzel", "Times New Roman", serif; font-weight: 600; font-size: clamp(64px, 15vw, 280px); line-height: .9; letter-spacing: .02em;
   background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--gold-1);
   opacity: .1; pointer-events: none;
 }
@@ -114,8 +116,7 @@ main > section:last-child, .salul-faq .faq { padding-bottom: calc((var(--section
   .contact-bar__fields { grid-template-columns: 1fr 1fr 1fr 200px; border-radius: var(--radius-pill); }
   .contact-bar__field input { height: 72px; padding: 0 28px; }
   .contact-bar__send { height: 72px; padding: 0 28px; }
-  .site-footer__main { margin-top: -72px; padding-top: 150px; border-top-left-radius: 200px; }
-  .site-footer__mark { top: 110px; }
+  .site-footer__main { margin-top: -72px; padding-top: 112px; border-top-left-radius: 200px; }
   .site-footer__cols { grid-template-columns: 1fr auto 1fr; align-items: end; padding-bottom: 72px; }
   .site-footer__contact { justify-self: end; }
   .site-footer__bottom { grid-template-columns: 1fr auto; align-items: center; }
