@@ -39,9 +39,6 @@
 }
 .project__name { margin: 0; font-size: var(--h4); font-weight: 700; line-height: 1.05; color: var(--paper); transition: color .45s; }
 .project__place { display: block; margin-top: 8px; font-size: 16px; font-weight: 300; color: rgba(254, 254, 254, .7); }
-.project__go { display: grid; place-items: center; color: var(--paper); }
-.project__go svg { width: 28px; height: 28px; transition: transform .45s cubic-bezier(.4, 0, .2, 1); }
-.project__link:hover .project__go svg, .project__link:focus-visible .project__go svg { transform: translateX(-6px); }
 .project__link:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 6px; border-radius: 4px; }
 
 .project__details { padding-top: 16px; }
@@ -63,13 +60,11 @@
   }
   .projects__list { gap: 0; border-bottom: 1px solid var(--line-on-dark); }
   .project { border-top: 1px solid var(--line-on-dark); }
-  .project__link { padding: 26px 0; gap: 24px; }
+  .project__link { padding: 26px 0; gap: 24px; cursor: pointer; }
   .project__name { color: rgba(254, 254, 254, .42); }
   .project__place { color: rgba(254, 254, 254, .42); transition: color .45s; }
-  .project__go { opacity: 0; transition: opacity .45s; }
   .project.is-active .project__name { color: var(--paper); }
   .project.is-active .project__place { color: rgba(254, 254, 254, .7); }
-  .project.is-active .project__go { opacity: 1; }
 
   /* הפרטים נפתחים רק לפרויקט הפעיל */
   .project__details {

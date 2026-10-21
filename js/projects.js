@@ -1,5 +1,5 @@
 /* פרויקטים בשיווק (מחשב): ההדמיה נשארת צמודה למסך (סטיקי) לאורך כל הרשימה. מחליפים פרויקט בלחיצה על הלשונית שלו,
-   וההדמיה והפרטים מתחלפים. לחיצה על פרויקט שכבר פעיל פותחת את הדף שלו. גם מקלדת (פוקוס) מחליפה פרויקט.
+   וההדמיה והפרטים מתחלפים. אין מעבר לדף אחר: זו החלפת תמונה בלבד. גם מקלדת (פוקוס, Enter ורווח) מחליפה פרויקט.
    בלי JS הפרויקט הראשון פעיל (המחלקה כתובה ב-HTML) וכל הקישורים עובדים. במובייל כל פרויקט הוא כרטיס מלא ואין צורך בכלום.
    עובד גם באלמנטור (אותו מבנה בתוך ווידג'ט HTML). */
 (function () {
@@ -13,8 +13,9 @@
 
     var activate = function (item) {
       items.forEach(function (i) {
-        var on = i === item;
+        var on = i === item, l = i.querySelector('.project__link');
         i.classList.toggle('is-active', on);
+        if (l) l.setAttribute('aria-expanded', on ? 'true' : 'false');
       });
     };
 
@@ -29,15 +30,16 @@
     };
     var onScroll = update; // חישוב זול, אין צורך להשהות ל-rAF
 
+    // הלשוניות הן בורר תמונות בלבד: לחיצה (או Enter ורווח) מחליפה פרויקט, בלי מעבר לדף אחר
     items.forEach(function (item) {
-      var link = item.querySelector('.project__link');
-      if (!link) return;
-      link.addEventListener('click', function (e) {
-        if (!desktop.matches || item.classList.contains('is-active')) return;
-        e.preventDefault();
-        activate(item);
+      var tab = item.querySelector('.project__link');
+      if (!tab) return;
+      tab.addEventListener('click', function () { if (desktop.matches) activate(item); });
+      tab.addEventListener('keydown', function (e) {
+        if (!desktop.matches || (e.key !== 'Enter' && e.key !== ' ')) return;
+        e.preventDefault(); activate(item);
       });
-      link.addEventListener('focus', function () { if (desktop.matches) activate(item); });
+      tab.addEventListener('focus', function () { if (desktop.matches) activate(item); });
     });
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
