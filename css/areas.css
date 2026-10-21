@@ -1,0 +1,77 @@
+/* גרסה 2: אזורי פעילות (מבנה כמו בדשא אור, עיצוב הר סלול). רשימת אזורים נפתחת מימין, מפה עם נקודות לחיצות משמאל. */
+.areas { padding: calc(var(--section-gap) / 2) var(--side-pad); background: var(--ink); color: var(--paper); overflow: hidden; }
+.areas__head { max-width: 860px; margin: 0 auto 48px; text-align: center; }
+.areas__eyebrow { margin: 0 0 14px; font-size: 16px; font-weight: 500; letter-spacing: .08em; color: var(--gold-2); }
+.areas__title { margin: 0; font-size: var(--h2); font-weight: 300; line-height: 1.05; color: var(--paper); text-wrap: balance; }
+.areas__title span { display: block; font-weight: 700; color: var(--gold-1); background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.areas__hint { margin: 18px 0 0; font-size: 16px; color: rgba(254, 254, 254, .6); }
+
+.areas__body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; max-width: 1300px; margin: 0 auto; align-items: start; }
+@media (min-width: 1025px) { .areas__body { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 4vw; } }
+
+/* רשימת האזורים */
+.areas__list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.areas__card { border: 1px solid var(--line-on-dark); border-radius: var(--radius); background: rgba(254, 254, 254, .03); transition: border-color .35s, background-color .35s; }
+.areas__card.is-open, .areas__card.is-hot { border-color: rgba(198, 160, 65, .6); background: rgba(198, 160, 65, .06); }
+.areas__card-h { margin: 0; }
+.areas__card-btn { display: flex; align-items: center; gap: 14px; width: 100%; padding: 20px 22px; background: none; border: 0; color: inherit; font: inherit; text-align: start; cursor: pointer; }
+.areas__card-btn:focus-visible { outline: 2px solid var(--gold-2); outline-offset: -2px; border-radius: var(--radius); }
+.areas__card-dot { flex: none; width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--gold-1); transition: background-color .35s; }
+.areas__card.is-open .areas__card-dot, .areas__card.is-hot .areas__card-dot { background: var(--gold-2); }
+.areas__card-name { flex: 1; font-size: var(--h5); font-weight: 700; color: var(--paper); }
+.areas__badge { flex: none; padding: 5px 12px; border: 1px solid var(--line-on-dark); border-radius: var(--radius-pill); font-size: 13px; color: rgba(254, 254, 254, .75); }
+.areas__badge--hq { border: 0; background: var(--gold-grad); color: var(--ink); font-weight: 700; }
+.areas__chev { flex: none; display: grid; place-items: center; width: 24px; height: 24px; color: var(--gold-2); transition: transform .4s cubic-bezier(.2, .8, .2, 1); }
+.areas__chev svg { width: 22px; height: 22px; }
+.areas__card.is-open .areas__chev { transform: rotate(180deg); }
+.areas__card-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s cubic-bezier(.2, .8, .2, 1); }
+.areas__card-body > div { overflow: hidden; }
+.areas__card.is-open .areas__card-body { grid-template-rows: 1fr; }
+.areas__card-desc { margin: 0; padding: 0 22px 14px 22px; padding-inline-start: 48px; font-size: 16px; color: rgba(254, 254, 254, .72); }
+.areas__chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0 22px 22px; padding-inline-start: 48px; list-style: none; }
+.areas__chips li { padding: 5px 14px; border: 1px solid rgba(198, 160, 65, .45); border-radius: var(--radius-pill); font-size: 15px; color: var(--paper); }
+
+.areas__cta { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 16px; padding: 28px 22px; border-radius: var(--radius); background: linear-gradient(135deg, rgba(198, 160, 65, .16), rgba(198, 160, 65, .04)); border: 1px solid rgba(198, 160, 65, .35); text-align: center; }
+.areas__cta-text { margin: 0; font-size: 20px; font-weight: 500; color: var(--paper); }
+
+/* מפה */
+.areas__map { position: sticky; top: calc(var(--header-h) + 24px); padding: 24px; border: 1px solid var(--line-on-dark); border-radius: var(--radius); background: rgba(254, 254, 254, .03); }
+.areas__map-inner { position: relative; width: min(100%, 380px); margin: 0 auto; }
+.areas__svg { display: block; width: 100%; height: 100%; font-family: var(--font-main); }
+.areas__land { fill: #0A2A40; }
+.areas__coast { fill: none; stroke: rgba(230, 196, 101, .55); stroke-width: 1.4; }
+.areas__band { fill: rgba(198, 160, 65, .14); stroke: var(--gold-1); stroke-width: 1; stroke-dasharray: 4 5; }
+
+.areas__pin { position: absolute; width: 0; height: 0; padding: 0; border: 0; background: none; color: var(--paper); font: inherit; cursor: pointer; }
+/* סיכה: הקצה התחתון יושב בדיוק על המיקום. בלי הבהובים ובלי פעימות, רק הרמה קלה כשבוחרים */
+.areas__pin-icon { position: absolute; left: -14px; top: -38px; width: 28px; height: 38px; overflow: visible; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .35)); transition: transform .35s cubic-bezier(.2, .8, .2, 1); }
+.areas__pin-shape { fill: var(--gold-2); stroke: var(--ink); stroke-width: 1.5; }
+.areas__pin-core { fill: var(--ink); }
+.areas__pin--hq .areas__pin-icon { left: -17px; top: -46px; width: 34px; height: 46px; }
+.areas__pin-label { position: absolute; top: -37px; white-space: nowrap; font-size: 16px; font-weight: 700; line-height: 1; padding: 6px 11px; border-radius: var(--radius-pill); background: var(--ink); border: 1px solid var(--line-on-dark); color: var(--paper); transition: border-color .3s, color .3s, background-color .3s; }
+.areas__pin--hq .areas__pin-label { top: -42px; }
+.areas__pin--r .areas__pin-label { left: 22px; }
+.areas__pin--l .areas__pin-label { right: 22px; }
+.areas__pin.is-active .areas__pin-icon, .areas__pin.is-hot .areas__pin-icon, .areas__pin:hover .areas__pin-icon { transform: translateY(-4px); }
+.areas__pin.is-active .areas__pin-label, .areas__pin.is-hot .areas__pin-label, .areas__pin:hover .areas__pin-label { border-color: var(--gold-1); background: var(--gold-grad); color: var(--ink); }
+.areas__pin:focus-visible { outline: none; }
+.areas__pin:focus-visible .areas__pin-label { outline: 2px solid var(--gold-2); outline-offset: 2px; }
+.areas__legend { margin: 16px 0 0; text-align: center; font-size: 14px; color: rgba(254, 254, 254, .65); }
+.areas__legend-band { display: inline-flex; align-items: center; gap: 8px; }
+.areas__legend-band::before { content: ""; width: 18px; height: 11px; border: 1px dashed var(--gold-1); background: rgba(198, 160, 65, .14); }
+
+/* כניסה בגלילה */
+@media (prefers-reduced-motion: no-preference) {
+  .areas.is-ready .areas__card { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s cubic-bezier(.2, .8, .2, 1), border-color .35s, background-color .35s; transition-delay: calc(var(--i) * 70ms), calc(var(--i) * 70ms), 0s, 0s; }
+  .areas.is-ready .areas__pin { opacity: 0; transition: opacity .5s ease .4s; }
+  .areas.is-in .areas__card, .areas.is-in .areas__pin { opacity: 1; transform: none; }
+}
+
+@media (max-width: 1024px) {
+  .areas__head { margin-bottom: 32px; }
+  .areas__map { position: static; order: -1; padding: 16px; }
+  .areas__map-inner { width: min(100%, 300px); }
+  .areas__pin-label { font-size: 14px; }
+  .areas__card-btn { padding: 16px; gap: 10px; }
+  .areas__card-desc, .areas__chips { padding-inline: 16px; padding-inline-start: 38px; }
+}

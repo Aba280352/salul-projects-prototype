@@ -37,7 +37,7 @@
 .sellers.is-ready .step__body { display: grid; grid-template-rows: 0fr; padding-bottom: 0; transition: grid-template-rows .6s cubic-bezier(.22, 1, .36, 1), padding .6s; }
 .sellers.is-ready .step__body > div { overflow: hidden; min-height: 0; }
 .sellers.is-ready .step__body p { opacity: 0; transform: translateY(8px); transition: opacity .5s, transform .6s cubic-bezier(.22, 1, .36, 1); }
-.sellers.is-ready .step:not(.is-active) .step__btn { color: rgba(20, 20, 20, .45); }
+.sellers.is-ready .step:not(.is-active) .step__btn { color: rgba(0, 25, 43, .45); }
 .sellers.is-ready .step:not(.is-active) .step__btn:hover { color: var(--ink); }
 .sellers.is-ready .step.is-active .step__body { grid-template-rows: 1fr; padding-bottom: 26px; }
 .sellers.is-ready .step.is-active .step__body p { opacity: 1; transform: none; transition-delay: .15s; }
@@ -61,7 +61,7 @@
 .sellers__count {
   position: absolute; bottom: 16px; inset-inline-start: 16px; z-index: 1;
   padding: 8px 16px; border-radius: var(--radius-pill);
-  background: rgba(20, 20, 20, .45); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  background: rgba(0, 25, 43, .45); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
   font-size: var(--note); font-weight: 500; font-variant-numeric: tabular-nums; color: var(--paper);
 }
 

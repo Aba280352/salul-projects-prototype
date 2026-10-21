@@ -1,161 +1,82 @@
-/* מסך פתיחה (רפרנס: נדב). כל המסך נכנס לקפל הראשון: גובה הסקשן = גובה המסך פחות ההדר.
-   דסקטופ: גלריה של שתי תמונות גבוהות בימין, טקסט ותמונה רחבה בשמאל.
-   מובייל: טקסט ותמונה רחבה בלבד (הגלריה מוסתרת כדי שהכל ייכנס לקפל).
-   בקוד הטקסט ראשון (H1 ראשון ב-HTML), והסדר החזותי נקבע ב-grid. */
+/* גרסה 2: מסך פתיחה בקומפוזיציה של תמונת רקע מלאה (רפרנס: אמרלד). הבניין בצד שמאל, שמיים פתוחים בצד ימין,
+   והטקסט יושב על השמיים: שורה דקה, שורה עבה ענקית, קו זהב עם יהלום, פסקה וכפתורים.
+   ה-H1 הוא שורת המילות מפתח הקטנה למעלה (SEO), והסלוגן הגדול הוא פסקה מעוצבת. */
 
 .hero {
-  --badge: 112px;
-  --corner: 96px;
   position: relative;
-  display: flex;
-  /* מצב כהה: הסקשן נכנס מתחת להדר הזכוכית, כך שהגובה הכולל הוא מסך אחד */
+  display: flex; align-items: center;
   margin-top: calc(-1 * var(--header-h));
-  height: 100svh;
-  min-height: calc(520px + var(--header-h));
-  padding: calc(var(--header-h) + 24px) var(--side-pad) 24px;
-  background-color: var(--ink);
+  min-height: max(640px, 100svh);
+  padding: calc(var(--header-h) + 48px) var(--side-pad) 64px;
+  background: var(--ink);
   color: var(--paper);
   overflow: hidden;
   isolation: isolate;
 }
 
-/* רקע ריבועים שזז לאט באלכסון בלולאה רציפה, מיד עם טעינת הדף. קל משקל: CSS בלבד, רק transform על שכבה אחת (GPU).
-   השכבה גדולה בתא אחד ונעה בדיוק תא אחד, ולכן אין קפיצה. ההדרגה שבה הריבועים נעלמים לכיוון הפינה ב-::after מעליה, כדי שלא תזוז איתם. וזוהר זהב חלש מאחורי הכותרת */
-.hero::before {
-  content: ""; position: absolute; top: -56px; left: -56px; right: 0; bottom: 0; z-index: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(254, 254, 254, .085) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(254, 254, 254, .085) 1px, transparent 1px);
-  background-size: 56px 56px;
-  will-change: transform;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .hero::before { animation: hero-grid-drift 6s linear infinite; }
-}
-@keyframes hero-grid-drift { to { transform: translate3d(56px, 56px, 0); } }
-.hero::after {
-  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+.hero__bg { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 12% 50%; }
+/* הצללה: חזקה בצד הטקסט (ימין), כמעט כלום מעל הבניין, ופס כהה עדין למעלה בשביל ההדר */
+.hero__shade {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(ellipse 45% 40% at 30% 35%, rgba(198, 160, 65, .10) 0%, transparent 70%),
-    radial-gradient(ellipse 90% 80% at 70% 0%, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, .45) 45%, #141414 85%);
+    linear-gradient(to left, rgba(0, 25, 43, .62) 0%, rgba(0, 25, 43, .28) 42%, rgba(0, 25, 43, 0) 68%),
+    linear-gradient(to bottom, rgba(0, 25, 43, .55) 0%, rgba(0, 25, 43, 0) 22%),
+    linear-gradient(to top, rgba(0, 25, 43, .5) 0%, rgba(0, 25, 43, 0) 30%);
 }
 
-.hero__inner {
-  position: relative; z-index: 1;
-  flex: 1; min-height: 0;
-  display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px;
+.hero__content { width: min(100%, 860px); }
+@media (min-width: 1025px) { .hero__content { max-width: 56%; } }
+
+/* H1: שורת מילות המפתח, קטנה ומרווחת */
+.hero__tagline {
+  margin: 0 0 clamp(18px, 2.6vh, 30px);
+  font-size: 18px; font-weight: 500; line-height: 1.4; letter-spacing: .04em; color: var(--gold-2);
 }
 
-/* טקסט: עמודה שהתמונה הרחבה ממלאת את המקום שנשאר בה */
-.hero__text { display: flex; flex-direction: column; min-height: 0; }
-.hero__tagline { font-size: var(--h5); font-weight: 500; line-height: 1.3; color: var(--paper); }
-.hero__title {
-  margin-top: 8px; font-size: var(--h1); font-weight: 700; line-height: 1.05; color: var(--gold-1);
-  background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-}
-.hero__lead { margin-top: 16px; max-width: 600px; color: rgba(254, 254, 254, .8); }
+/* הסלוגן הגדול */
+.hero__title { margin: 0; color: var(--paper); line-height: .92; }
+.hero__title-light, .hero__title-bold { display: block; }
+.hero__title-light { position: relative; display: flex; align-items: center; gap: clamp(16px, 2vw, 32px); font-size: clamp(54px, 5.8vw, 112px); font-weight: 300; }
+.hero__title-bold { margin-top: .06em; font-size: clamp(64px, 7.4vw, 142px); font-weight: 700; letter-spacing: -.01em; }
+.hero__title-bold em { font-style: normal; color: var(--gold-2); }
+
+/* קו זהב דק שנגמר ביהלום, ממשיך את השורה הדקה שמאלה */
+.hero__rule { display: flex; align-items: center; flex: 0 1 clamp(70px, 9vw, 170px); }
+.hero__rule::before { content: ""; flex: 1; height: 1px; background: var(--gold-1); }
+.hero__rule::after { content: ""; flex: none; width: 14px; height: 14px; background: var(--gold-1); transform: rotate(45deg); margin-inline-start: -2px; }
+
+.hero__lead { max-width: 620px; margin: clamp(22px, 3.4vh, 40px) 0 0; font-size: 20px; line-height: 1.6; color: rgba(254, 254, 254, .82); }
+.hero__lead strong { font-weight: 700; color: var(--paper); }
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(24px, 4vh, 44px); }
 
 /* אנימציית כניסה: האלמנטים מוסתרים רק עד ש-GSAP מתחיל. בלי JS או עם פחות תנועה הם גלויים, ואם הסקריפט לא נטען הם מופיעים אחרי 2.5 שניות */
 @media (prefers-reduced-motion: no-preference) {
   html:not(.hero-title-ready) :is(.hero__title, .hero__tagline, .hero__lead, .hero__actions) {
     visibility: hidden; animation: intro-failsafe 0s 2.5s forwards;
   }
+  .hero__bg { animation: hero-bg-in 2.4s cubic-bezier(.2, .8, .2, 1) both; }
 }
 @keyframes intro-failsafe { to { visibility: visible; } }
+@keyframes hero-bg-in { from { transform: scale(1.06); } to { transform: none; } }
 
-/* שני כפתורים: קונים ומוכרים */
-.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(16px, 2.4vh, 28px); }
-
-/* תמונה רחבה ותג עגול */
-.hero__media { position: relative; flex: 1 1 auto; min-height: 160px; margin-top: 24px; }
-.hero__img {
-  display: block; width: 100%; height: 100%;
-  object-fit: cover; border-radius: var(--radius);
-}
-.hero__img--wide { border-radius: 0; }
-
-.badge {
-  position: absolute; left: calc(var(--badge) * -0.12); bottom: calc(var(--badge) * -0.2);
-  width: var(--badge); height: var(--badge); border-radius: 50%;
-  display: grid; place-items: center;
-  background: var(--gold-grad); color: var(--ink); text-decoration: none;
-}
-.badge__ring { position: absolute; inset: 0; width: 100%; height: 100%; }
-.badge__ring text { font-family: var(--font-main); font-size: 16px; font-weight: 500; fill: var(--ink); letter-spacing: .02em; }
-/* הטקסט סביב התג מסתובב לאט באופן אוטומטי (כבוי בהגדרת פחות תנועה) */
-@media (prefers-reduced-motion: no-preference) {
-  .badge__ring { animation: badge-spin 20s linear infinite; }
-}
-@keyframes badge-spin { to { transform: rotate(360deg); } }
-.badge__arrow { position: relative; display: grid; place-items: center; width: 38%; height: 38%; border-radius: 50%; background: var(--ink); color: var(--gold-2); }
-.badge__arrow svg { width: 55%; height: 55%; }
-.badge:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
-
-
-/* גלריה: מוסתרת במובייל */
-.hero__gallery { display: none; }
-.hero__tall { position: relative; margin: 0; min-height: 0; }
-.hero__tall .hero__img { height: 100%; }
-.hero__tall--accent .hero__img { border-top-left-radius: var(--corner); }
-.hero__tall--accent::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  border-radius: var(--radius); border-top-left-radius: var(--corner);
-  background: linear-gradient(180deg, rgba(20, 20, 20, .38) 0%, rgba(20, 20, 20, .08) 100%);
-}
-
-/* מעבר תמונה בריחוף: התמונה השנייה של הפרויקט מתמזגת פנימה בתנועה רכה (ease), והראשונה מתקרבת מעט */
-.hero__swap { position: absolute; inset: 0; overflow: hidden; border-radius: var(--radius); border-top-left-radius: var(--corner); }
-.hero__swap .hero__img { position: absolute; inset: 0; border-radius: 0; }
-.hero__tall { overflow: hidden; border-radius: var(--radius); }
-.hero__tall--accent { border-top-left-radius: var(--corner); }
-.swap__b { position: absolute; inset: 0; opacity: 0; transform: scale(1.08); }
-.swap__a, .swap__b {
-  transition: opacity .9s cubic-bezier(.4, 0, .2, 1), transform 1.4s cubic-bezier(.22, .61, .36, 1);
-  will-change: opacity, transform;
-}
-@media (hover: hover) {
-  .hero__media:hover .swap__b, .hero__tall:hover .swap__b, .hero__tall:focus-within .swap__b { opacity: 1; transform: scale(1); }
-  .hero__media:hover .swap__a, .hero__tall:hover .swap__a, .hero__tall:focus-within .swap__a { transform: scale(1.05); }
-}
-@media (prefers-reduced-motion: reduce) { .swap__a, .swap__b { transition-duration: .01ms; transform: none !important; } }
-
-/* שם הפרויקט על התמונה: מופיע בריחוף ובפוקוס, ותמיד גלוי במסכי מגע. השם הוא קישור לעמוד הפרויקט */
-.hero__caption {
-  position: absolute; z-index: 2; inset-inline-start: 16px; bottom: 16px; margin: 0;
-  display: flex; align-items: baseline; gap: 10px;
-  padding: 10px 18px; border-radius: var(--radius-pill);
-  background: rgba(20, 20, 20, .72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-  color: var(--paper); line-height: 1.3; white-space: nowrap;
-  transition: opacity .2s ease, transform .2s ease;
-}
-.hero__caption a { color: inherit; text-decoration: none; font-size: var(--body); font-weight: 500; }
-.hero__caption span { font-size: var(--note); font-weight: 300; opacity: .85; }
-.hero__caption a:focus-visible { outline: none; }
-.hero__caption:has(a:focus-visible) { outline: 2px solid var(--gold-2); outline-offset: 2px; }
-@media (hover: hover) {
-  .hero__caption { opacity: 0; transform: translateY(8px); }
-  .hero__tall:hover .hero__caption, .hero__media:hover .hero__caption,
-  .hero__tall:focus-within .hero__caption, .hero__media:focus-within .hero__caption { opacity: 1; transform: none; }
-}
-
-/* ===== דסקטופ ===== */
-@media (min-width: 1025px) {
-  .hero {
-    --badge: clamp(120px, 20vh, 200px);
-    --corner: clamp(96px, 22vh, 220px);
-    max-height: calc(1100px + var(--header-h));
-    padding-top: calc(var(--header-h) + clamp(24px, 4vh, 56px));
-    padding-bottom: clamp(24px, 4vh, 56px);
+@media (max-width: 1024px) {
+  .hero { align-items: flex-end; padding-bottom: 40px; }
+  .hero__bg { object-position: 22% 50%; }
+  .hero__shade {
+    background:
+      linear-gradient(to top, rgba(0, 25, 43, .92) 0%, rgba(0, 25, 43, .6) 45%, rgba(0, 25, 43, .1) 75%),
+      linear-gradient(to bottom, rgba(0, 25, 43, .55) 0%, rgba(0, 25, 43, 0) 20%);
   }
+  .hero__tagline { font-size: 15px; }
+  .hero__lead { font-size: 17px; }
+  .hero__rule::after { width: 10px; height: 10px; }
+}
 
-  .hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 2.5vw; }
-  .hero__gallery { grid-column: 1; grid-row: 1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-md); min-height: 0; }
-  .hero__text { grid-column: 2; grid-row: 1; padding-inline-start: 1vw; }
-
-  /* הכותרת מתכווצת לפי רוחב וגובה המסך, עד 120px */
-  .hero__title { font-size: max(48px, min(var(--h1), 7.4vw, 10.5vh)); }
-  .hero__lead { margin-top: clamp(12px, 2.2vh, 28px); }
-  .hero__media { margin-top: clamp(16px, 3.5vh, 44px); min-height: 100px; }
-
-  .badge { left: calc(var(--badge) * -0.32); top: 50%; bottom: auto; transform: translateY(-50%); }
+/* כל שורה של הסלוגן נשארת שורה אחת, גם בטלפון (בלי מילה בודדת בשורה) */
+.hero__title-light, .hero__title-bold { white-space: nowrap; }
+@media (max-width: 1024px) {
+  .hero__title-light { font-size: min(11.2vw, 84px); }
+  .hero__title-bold { font-size: min(13.4vw, 100px); }
+  .hero__rule { display: none; }
 }

@@ -1,6 +1,6 @@
-// שרת מקומי קל לתצוגת הפרוטוטייפ: node dev-server.js  ->  http://localhost:8124/
+// שרת מקומי קל לתצוגת הפרוטוטייפ: node dev-server.js  ->  http://localhost:8128/
 const http = require('http'), fs = require('fs'), path = require('path');
-const root = __dirname, port = process.env.PORT || 8124;
+const root = __dirname, port = process.env.PORT || 8128;
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.woff': 'font/woff', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp' };
 http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split('?')[0]);

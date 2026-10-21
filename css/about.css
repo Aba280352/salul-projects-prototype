@@ -24,7 +24,8 @@
   line-height: 1.1; letter-spacing: .01em;
   background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--gold-1);
 }
-.about__dot { flex: none; width: .14em; height: .14em; margin: 0 .55em; background: var(--gold-grad); transform: rotate(45deg); }
+/* גרסה 2: בלי היהלום בין החזרות. המרווח בין חזרה לחזרה נשאר, כדי שהלולאה לא תיראה צפופה */
+.about__item { margin-right: 1.1em; }
 
 .about__inner { display: grid; gap: 32px; padding: 0 var(--side-pad); }
 
@@ -45,7 +46,7 @@
 .about__title { margin: 0 0 var(--gap-md); font-size: var(--h4); font-weight: 700; line-height: 1.05; color: var(--ink); text-wrap: balance; }
 .about__body { margin: 0; font-size: var(--body); font-weight: 300; line-height: 1.6; color: var(--ink); text-wrap: pretty; }
 .about__sign { margin: 20px 0 32px; font-size: 16px; font-weight: 500; color: var(--ink); }
-.about__sign span { display: block; font-weight: 300; font-size: var(--note); color: rgba(20, 20, 20, .66); }
+.about__sign span { display: block; font-weight: 300; font-size: var(--note); color: rgba(0, 25, 43, .66); }
 
 @media (min-width: 1025px) {
   .about__marquee { margin-bottom: 64px; }

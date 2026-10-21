@@ -18,7 +18,7 @@
 .intro__grid .h { left: 0; right: 0; top: var(--p); height: 1px; transform: scaleX(0); transform-origin: right; animation: intro-line-h 1s cubic-bezier(.65, 0, .35, 1) calc(.2s + var(--i) * .07s) forwards; }
 
 .intro__logo {
-  position: relative; width: min(64vw, 440px); aspect-ratio: 1272 / 771;
+  position: relative; width: min(56vw, 320px); aspect-ratio: 1723 / 1399;
   transition: transform .9s cubic-bezier(.76, 0, .24, 1), opacity .5s;
 }
 .intro__logo img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }

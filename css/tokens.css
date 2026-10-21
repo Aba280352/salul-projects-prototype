@@ -17,13 +17,13 @@
   /* גרדיאנט זהב כהה לטקסט על רקע בהיר: 5.9:1 עד 3.3:1 מול #F9F8F7 (עובר AA לטקסט גדול) */
   --gold-grad-text: linear-gradient(270deg, #8C6A12 0%, #C9961A 50%, #E3B122 100%);
   --gold-glow: drop-shadow(0 0 8px rgba(227, 177, 34, .28));
-  --ink: #141414;
+  --ink: #00192B;
   --paper: #FEFEFE;
   --paper-alt: #F9F8F7;
   --text-muted: #666666;
-  --line: rgba(20, 20, 20, .14);
+  --line: rgba(0, 25, 43, .14);
   --line-on-dark: rgba(254, 254, 254, .18);
-  --ink-raised: #1E1E1E;
+  --ink-raised: #0A2A40;
 
   --section-gap: 90px;
   --section-gap-related: 40px;

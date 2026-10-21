@@ -82,11 +82,15 @@
 
   /* ההדמיה של כל פרויקט יושבת בבמה בשמאל, ורק של הפעיל גלויה */
   .project__media {
-    position: absolute; top: 0; bottom: 0; inset-inline-end: 0; margin: 0;
-    width: calc((100% - 5vw) * .56); aspect-ratio: auto;
+    /* גרסה 2: מסגרת לרוחב (4:3) שתמיד נכנסת במסך, לא פס גבוה לאורך כל הרשימה */
+    position: absolute; top: 0; inset-inline-end: 0; margin: 0;
+    width: calc((100% - 5vw) * .56); aspect-ratio: 4 / 3;
+    max-height: calc(100svh - var(--header-h) - 48px);
     border-top-left-radius: var(--corner, 96px);
     opacity: 0; transition: opacity .8s cubic-bezier(.22, 1, .36, 1);
   }
+  /* במה צמודה: projects.js מעדכן את --stage-y לפי הגלילה, כך שההדמיה נשארת בתוך המסך לאורך כל הרשימה */
+  .project__media { transform: translate3d(0, var(--stage-y, 0px), 0); will-change: transform; }
   .project__media img { transform: scale(1.06); transition: transform 1.4s cubic-bezier(.22, 1, .36, 1); }
   .project.is-active .project__media { opacity: 1; z-index: 1; }
   .project.is-active .project__media img { transform: scale(1); }

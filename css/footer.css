@@ -18,7 +18,7 @@ main > section:last-child, .salul-faq .faq { padding-bottom: calc((var(--section
   position: relative; z-index: 2;
   display: grid; gap: 22px; padding: 28px 22px;
   border-radius: 16px 56px 16px 56px;
-  background: var(--paper); box-shadow: 0 30px 70px -36px rgba(20, 20, 20, .35);
+  background: var(--paper); box-shadow: 0 30px 70px -36px rgba(0, 25, 43, .35);
 }
 .contact-bar__title { margin: 0; font-size: var(--h5); font-weight: 700; line-height: 1.1; color: var(--ink); white-space: nowrap; }
 .contact-bar__sub { display: flex; align-items: center; gap: 12px; margin: 6px 0 0; font-size: var(--h5); font-weight: 300; line-height: 1.2; color: var(--ink); }
@@ -35,7 +35,7 @@ main > section:last-child, .salul-faq .faq { padding-bottom: calc((var(--section
   font: 300 var(--body)/1.3 var(--font-main); color: var(--ink);
   direction: rtl; text-align: right; /* גם בטלפון ובאימייל, שהדפדפן מיישר לשמאל כברירת מחדל */
 }
-.contact-bar__field input::placeholder { color: rgba(20, 20, 20, .5); }
+.contact-bar__field input::placeholder { color: rgba(0, 25, 43, .5); }
 .contact-bar__field:focus-within { background: var(--paper-alt); box-shadow: inset 0 -2px 0 var(--gold-1); }
 .contact-bar__field input:focus-visible { outline: none; }
 /* מקטע שליחה מלא בקצה הגלולה, החץ משמאל לטקסט */
