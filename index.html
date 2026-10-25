@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="css/dividers.css">
   <link rel="stylesheet" href="css/texture.css">
   <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/theme-light.css">
   <script>
     /* הפתיח רץ בכל טעינה, חוץ ממי שביקש פחות תנועה. מחליטים לפני הציור כדי שלא יהבהב */
     document.documentElement.classList.add(matchMedia('(prefers-reduced-motion: reduce)').matches ? 'intro-skip' : 'intro-run');
@@ -37,14 +38,14 @@
 <div class="intro" id="intro" aria-hidden="true">
   <div class="intro__grid"><span class="v" style="--p:0%;--i:0"></span><span class="v" style="--p:10%;--i:1"></span><span class="v" style="--p:20%;--i:2"></span><span class="v" style="--p:30%;--i:3"></span><span class="v" style="--p:40%;--i:4"></span><span class="v" style="--p:50%;--i:5"></span><span class="v" style="--p:60%;--i:6"></span><span class="v" style="--p:70%;--i:7"></span><span class="v" style="--p:80%;--i:8"></span><span class="v" style="--p:90%;--i:9"></span><span class="v" style="--p:100%;--i:10"></span><span class="h" style="--p:0%;--i:0"></span><span class="h" style="--p:20%;--i:1"></span><span class="h" style="--p:40%;--i:2"></span><span class="h" style="--p:60%;--i:3"></span><span class="h" style="--p:80%;--i:4"></span><span class="h" style="--p:100%;--i:5"></span></div>
   <div class="intro__logo">
-    <img class="intro__ghost" src="img/logo-har-stacked-gold.svg" width="1723" height="1399" alt="">
-    <img class="intro__fill" src="img/logo-har-stacked-gold.svg" width="1723" height="1399" alt="">
+    <img class="intro__ghost" src="img/logo-har-stacked-dark.svg" width="1723" height="1399" alt="">
+    <img class="intro__fill" src="img/logo-har-stacked-dark.svg" width="1723" height="1399" alt="">
   </div>
 </div>
 <header class="site-header" id="site-header">
   <div class="site-header__inner">
     <a class="logo" href="/" aria-label="הר סלול נדל&quot;ן, לדף הבית">
-      <img src="img/logo-har-horizontal-gold.svg" width="1988" height="556" alt="הר סלול נדל&quot;ן">
+      <img src="img/logo-har-horizontal-dark.svg" width="1988" height="556" alt="הר סלול נדל&quot;ן">
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="פתיחת התפריט">
@@ -80,8 +81,8 @@
     </nav>
 
     <div class="site-header__cta">
-      <a class="btn btn--primary" href="/contact/">
-        <span class="btn__label" data-text="צרו איתנו קשר">צרו איתנו קשר</span>
+      <a class="btn btn--primary" href="#contact">
+        <span class="btn__label" data-text="הערכת מחיר שוק">הערכת מחיר שוק</span>
         <span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span>
       </a>
     </div>
@@ -94,30 +95,82 @@
   <div class="hero__shade" aria-hidden="true"></div>
   <div class="hero__content">
     <h1 class="hero__tagline" id="hero-title">תיווך נדל&quot;ן ופרויקטים חדשים באזור&nbsp;המרכז</h1>
-    <p class="hero__title"><span class="hero__title-light">בונים את הסיפור,</span><span class="hero__title-bold">בונים את החלום<em>.</em></span></p>
-    <p class="hero__lead">תיווך נדל"ן לדירות <strong>יד שנייה</strong> ול<strong>פרויקטים חדשים מקבלן</strong>, במקום אחד. אנחנו מלווים קונים ומוכרים בכל ערי המרכז, <strong>מהחיפוש הראשון ועד מסירת המפתח</strong>.</p>
+    <p class="hero__title"><span class="hero__title-light">יש לכם דירה.</span><span class="hero__title-bold">יש לנו קונים<em>.</em></span></p>
+    <p class="hero__lead"><strong>מאגר רחב של קונים מקומיים ותושבי חוץ</strong> מחכה לדירה שלכם, וביקוש גבוה הוא מה שמעלה מחיר. לכן אצלנו היא שווה יותר. ומי שמחפש בית? גם לו יש כאן <strong>דירות יד שנייה ופרויקטים חדשים מקבלן</strong>, במקום אחד.</p>
     <div class="hero__actions">
-        <a class="btn btn--primary" href="/apartments-for-sale/"><span class="btn__label" data-text="מחפשים דירה">מחפשים דירה</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
-        <a class="btn btn--glass" href="/sell-apartment/"><span class="btn__label" data-text="רוצים למכור">רוצים למכור</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
+        <a class="btn btn--primary" href="/sell-apartment/"><span class="btn__label" data-text="רוצים למכור">רוצים למכור</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
+        <a class="btn btn--glass" href="/apartments-for-sale/"><span class="btn__label" data-text="מחפשים דירה">מחפשים דירה</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
       </div>
   </div>
 </section>
 <section class="strip" aria-label="היתרונות שלנו">
   <div class="strip__track">
-    <ul class="strip__list"><li class="strip__item"><span>ליווי אישי עד המפתח</span></li><li class="strip__item"><span>מענה לכל פנייה תוך 24 שעות</span></li><li class="strip__item"><span>תיווך נדל"ן ליד שנייה ולפרויקטים חדשים</span></li><li class="strip__item"><span>פועלים בכל אזור המרכז</span></li><li class="strip__item"><span>הערכת שווי למוכרים</span></li><li class="strip__item"><span>אסטרטגיה, מיתוג ותמחור ליזמים</span></li></ul>
-    <ul class="strip__list" aria-hidden="true"><li class="strip__item"><span>ליווי אישי עד המפתח</span></li><li class="strip__item"><span>מענה לכל פנייה תוך 24 שעות</span></li><li class="strip__item"><span>תיווך נדל"ן ליד שנייה ולפרויקטים חדשים</span></li><li class="strip__item"><span>פועלים בכל אזור המרכז</span></li><li class="strip__item"><span>הערכת שווי למוכרים</span></li><li class="strip__item"><span>אסטרטגיה, מיתוג ותמחור ליזמים</span></li></ul>
+    <ul class="strip__list"><li class="strip__item"><span>ליווי אישי עד המפתח</span></li><li class="strip__item"><span>מענה לכל פנייה תוך 24 שעות</span></li><li class="strip__item"><span>תיווך נדל"ן ליד שנייה ולפרויקטים חדשים</span></li><li class="strip__item"><span>פועלים בכל אזור המרכז</span></li><li class="strip__item"><span>הערכת מחיר שוק למוכרים</span></li><li class="strip__item"><span>אסטרטגיה, מיתוג ותמחור ליזמים</span></li></ul>
+    <ul class="strip__list" aria-hidden="true"><li class="strip__item"><span>ליווי אישי עד המפתח</span></li><li class="strip__item"><span>מענה לכל פנייה תוך 24 שעות</span></li><li class="strip__item"><span>תיווך נדל"ן ליד שנייה ולפרויקטים חדשים</span></li><li class="strip__item"><span>פועלים בכל אזור המרכז</span></li><li class="strip__item"><span>הערכת מחיר שוק למוכרים</span></li><li class="strip__item"><span>אסטרטגיה, מיתוג ותמחור ליזמים</span></li></ul>
   </div>
 </section>
 
 <section class="stats" aria-labelledby="stats-title">
   <h2 class="stats__title" id="stats-title">הר סלול נדל"ן במספרים</h2>
   <ul class="stats__grid">
-    <li class="stats__item"><p class="stats__num"><span class="stats__count">15</span><span class="stats__unit">+</span></p><p class="stats__label">שנות מצוינות בנדל"ן</p></li>
     <li class="stats__item"><p class="stats__num"><span class="stats__count">5</span></p><p class="stats__label">פרויקטים בשיווק כרגע</p></li>
     <li class="stats__item"><p class="stats__num"><span class="stats__count">24</span><span class="stats__unit">ש׳</span></p><p class="stats__label">מענה לכל פנייה</p></li>
     <li class="stats__item"><p class="stats__num"><span class="stats__count">0</span><span class="stats__unit">₪</span></p><p class="stats__label">עמלה מרוכשים בפרויקטים חדשים</p></li>
   </ul>
 </section>
+
+<section class="sellers" aria-labelledby="sellers-title">
+  <div class="sellers__inner">
+    <div class="sellers__text">
+      <p class="sellers__eyebrow">מוכרים דירה?</p>
+      <h2 class="sellers__title" id="sellers-title">מכירת דירה באזור&nbsp;המרכז</h2>
+      <p class="sellers__lead">תיווך נדל"ן למוכרים: מתחילים בהערכת מחיר שוק לדירה וממשיכים יחד בכל השלבים, עד החתימה. אתם מקבלים ליווי אישי, ואנחנו דואגים לשיווק, לסינון הקונים ולמשא ומתן.</p>
+      <ol class="sellers__steps" aria-label="שלבי המכירה">
+        <li class="step is-active">
+          <span class="step__bar" aria-hidden="true"><span></span></span>
+          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="true" aria-controls="sell-step-1"><span class="step__num" aria-hidden="true">01</span>הערכת מחיר שוק</button></h3>
+          <div class="step__body" id="sell-step-1"><div><p>בודקים את הדירה, את השכונה ועסקאות דומות, ונותנים לכם מחיר מבוסס ומציאותי.</p></div></div>
+        </li>
+        <li class="step">
+          <span class="step__bar" aria-hidden="true"><span></span></span>
+          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="false" aria-controls="sell-step-2"><span class="step__num" aria-hidden="true">02</span>הכנה וצילום</button></h3>
+          <div class="step__body" id="sell-step-2"><div><p>מכינים את הדירה להצגה ומצלמים אותה כך שתיראה במיטבה.</p></div></div>
+        </li>
+        <li class="step">
+          <span class="step__bar" aria-hidden="true"><span></span></span>
+          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="false" aria-controls="sell-step-3"><span class="step__num" aria-hidden="true">03</span>שיווק</button></h3>
+          <div class="step__body" id="sell-step-3"><div><p>הדירה עולה לאתר שלנו, ליד2, למדלן ולקמפיינים ממומנים.</p></div></div>
+        </li>
+        <li class="step">
+          <span class="step__bar" aria-hidden="true"><span></span></span>
+          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="false" aria-controls="sell-step-4"><span class="step__num" aria-hidden="true">04</span>סינון קונים</button></h3>
+          <div class="step__body" id="sell-step-4"><div><p>בודקים כל פנייה ומגיעים לביקור עם קונים רציניים ומתאימים.</p></div></div>
+        </li>
+        <li class="step">
+          <span class="step__bar" aria-hidden="true"><span></span></span>
+          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="false" aria-controls="sell-step-5"><span class="step__num" aria-hidden="true">05</span>משא ומתן</button></h3>
+          <div class="step__body" id="sell-step-5"><div><p>מנהלים את המשא ומתן בשמכם, כדי להגיע למחיר ולתנאים הנכונים לכם.</p></div></div>
+        </li>
+        <li class="step">
+          <span class="step__bar" aria-hidden="true"><span></span></span>
+          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="false" aria-controls="sell-step-6"><span class="step__num" aria-hidden="true">06</span>חתימה</button></h3>
+          <div class="step__body" id="sell-step-6"><div><p>מלווים אתכם עד החתימה על החוזה ומסירת המפתח.</p></div></div>
+        </li>
+      </ol>
+      <a class="btn btn--primary" href="/sell-apartment/#valuation"><span class="btn__label" data-text="לבדיקת שווי הדירה">לבדיקת שווי הדירה</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
+    </div>
+    <figure class="sellers__stage">
+      <img src="img/sellers/step-1-valuation.webp" alt="בדיקת תוכנית דירה לצורך הערכת מחיר שוק" width="900" height="1200" decoding="async" class="is-active">
+      <img src="img/sellers/step-2-photo.webp" alt="צילום מקצועי של סלון מואר בדירה למכירה" width="900" height="1200" loading="lazy" decoding="async">
+      <img src="img/sellers/step-3-marketing.webp" alt="מודעת דירה למכירה במחשב ובטלפון" width="900" height="1200" loading="lazy" decoding="async">
+      <img src="img/sellers/step-4-buyers.webp" alt="זוג קונים בביקור בדירה למכירה" width="900" height="1200" loading="lazy" decoding="async">
+      <img src="img/sellers/step-5-negotiation.webp" alt="פגישת משא ומתן על מכירת דירה" width="900" height="1200" loading="lazy" decoding="async">
+      <img src="img/sellers/keys.webp" alt="מסירת מפתחות של דירה לאחר חתימה על הסכם מכר" width="900" height="1200" loading="lazy" decoding="async">
+      <figcaption class="sellers__count" aria-hidden="true" dir="ltr">01 / 06</figcaption>
+    </figure>
+  </div>
+</section>
+
 
 
 
@@ -127,7 +180,7 @@
 <section class="areas" aria-labelledby="areas-title">
   <div class="areas__head">
     <p class="areas__eyebrow">אזורי פעילות</p>
-    <h2 class="areas__title" id="areas-title">תיווך נדל"ן בכל <span>אזור המרכז</span></h2>
+    <h2 class="areas__title" id="areas-title">תיווך ושיווק נדל"ן בכל <span>אזור המרכז</span></h2>
     <p class="areas__hint">לוחצים על אזור במפה או ברשימה כדי לראות באילו ערים אנחנו נותנים שירותי תיווך נדל"ן</p>
   </div>
   <div class="areas__body">
@@ -166,7 +219,7 @@
           </button></h3>
           <div class="areas__card-body" id="area-pt" role="region" aria-labelledby="area-pt-btn"><div>
             <p class="areas__card-desc">הבית שלנו. משרד תיווך נדל"ן בגזית 7, וכאן נמצאים כל הפרויקטים החדשים שאנחנו משווקים כרגע.</p>
-            <ul class="areas__chips"><li>פתח תקווה</li><li>ראש העין</li><li>קריית אונו</li><li>גבעת שמואל</li><li>אור יהודה</li><li>יהוד</li></ul>
+            <ul class="areas__chips"><li>פתח תקווה</li><li>ראש העין</li><li>קריית אונו</li><li>גבעת שמואל</li><li>אור יהודה</li><li>יהוד</li><li>גני תקווה</li><li>אלעד</li></ul>
           </div></div>
         </li>
         <li class="areas__card" data-area="dan" style="--i:3">
@@ -224,6 +277,20 @@
     <h2 class="services__title" id="services-title">איך נוכל לעזור לכם?</h2>
   </div>
   <ul class="services__row">
+    <li class="service" style="background-image: url(img/sellers/keys.webp)">
+      <h3 class="service__title">מכירת דירה</h3>
+      <div class="service__body"><div class="service__inner">
+        <p class="service__text">תיווך נדל"ן למוכרים: הכנה וצילום, שיווק באתר, ביד2 ובמדלן, סינון קונים ומשא ומתן עד החתימה.</p>
+        <a class="btn btn--primary" href="/sell-apartment/"><span class="btn__label" data-text="למכירת דירה">למכירת דירה</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
+      </div></div>
+    </li>
+    <li class="service" style="background-image: url(img/sellers/step-1-valuation.webp)">
+      <h3 class="service__title">הערכת מחיר שוק</h3>
+      <div class="service__body"><div class="service__inner">
+        <p class="service__text">הערכת מחיר שוק היא הצעד הראשון בכל תיווך נדל"ן: מחיר מבוסס ומציאותי לדירה שלכם, לפי הדירה, השכונה ועסקאות דומות.</p>
+        <a class="btn btn--primary" href="/sell-apartment/#valuation"><span class="btn__label" data-text="לבדיקת שווי">לבדיקת שווי</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
+      </div></div>
+    </li>
     <li class="service" style="background-image: url(img/listings/resale-4-rooms.webp)">
       <h3 class="service__title">דירות יד שנייה</h3>
       <div class="service__body"><div class="service__inner">
@@ -236,20 +303,6 @@
       <div class="service__body"><div class="service__inner">
         <p class="service__text">תיווך נדל"ן לדירות חדשות בפרויקטים שאנחנו משווקים מטעם היזם, בלי עמלה לרוכשים.</p>
         <a class="btn btn--primary" href="/new-projects/"><span class="btn__label" data-text="לפרויקטים החדשים">לפרויקטים החדשים</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
-      </div></div>
-    </li>
-    <li class="service" style="background-image: url(img/sellers/keys.webp)">
-      <h3 class="service__title">מכירת דירה</h3>
-      <div class="service__body"><div class="service__inner">
-        <p class="service__text">תיווך נדל"ן למוכרים: הכנה וצילום, שיווק באתר, ביד2 ובמדלן, סינון קונים ומשא ומתן עד החתימה.</p>
-        <a class="btn btn--primary" href="/sell-apartment/"><span class="btn__label" data-text="למכירת דירה">למכירת דירה</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
-      </div></div>
-    </li>
-    <li class="service" style="background-image: url(img/sellers/step-1-valuation.webp)">
-      <h3 class="service__title">הערכת שווי</h3>
-      <div class="service__body"><div class="service__inner">
-        <p class="service__text">הערכת שווי היא הצעד הראשון בכל תיווך נדל"ן: מחיר מבוסס ומציאותי לדירה שלכם, לפי הדירה, השכונה ועסקאות דומות.</p>
-        <a class="btn btn--primary" href="/sell-apartment/#valuation"><span class="btn__label" data-text="לבדיקת שווי">לבדיקת שווי</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
       </div></div>
     </li>
     <li class="service" style="background-image: url(img/gallery/g5.webp)">
@@ -412,57 +465,6 @@
   </div>
 </section>
 
-<section class="sellers" aria-labelledby="sellers-title">
-  <div class="sellers__inner">
-    <div class="sellers__text">
-      <p class="sellers__eyebrow">מוכרים דירה?</p>
-      <h2 class="sellers__title" id="sellers-title">מכירת דירה באזור&nbsp;המרכז</h2>
-      <p class="sellers__lead">תיווך נדל"ן למוכרים: מתחילים בהערכת שווי לדירה וממשיכים יחד בכל השלבים, עד החתימה. אתם מקבלים ליווי אישי, ואנחנו דואגים לשיווק, לסינון הקונים ולמשא ומתן.</p>
-      <ol class="sellers__steps" aria-label="שלבי המכירה">
-        <li class="step is-active">
-          <span class="step__bar" aria-hidden="true"><span></span></span>
-          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="true" aria-controls="sell-step-1"><span class="step__num" aria-hidden="true">01</span>הערכת שווי</button></h3>
-          <div class="step__body" id="sell-step-1"><div><p>בודקים את הדירה, את השכונה ועסקאות דומות, ונותנים לכם מחיר מבוסס ומציאותי.</p></div></div>
-        </li>
-        <li class="step">
-          <span class="step__bar" aria-hidden="true"><span></span></span>
-          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="false" aria-controls="sell-step-2"><span class="step__num" aria-hidden="true">02</span>הכנה וצילום</button></h3>
-          <div class="step__body" id="sell-step-2"><div><p>מכינים את הדירה להצגה ומצלמים אותה כך שתיראה במיטבה.</p></div></div>
-        </li>
-        <li class="step">
-          <span class="step__bar" aria-hidden="true"><span></span></span>
-          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="false" aria-controls="sell-step-3"><span class="step__num" aria-hidden="true">03</span>שיווק</button></h3>
-          <div class="step__body" id="sell-step-3"><div><p>הדירה עולה לאתר שלנו, ליד2, למדלן ולקמפיינים ממומנים.</p></div></div>
-        </li>
-        <li class="step">
-          <span class="step__bar" aria-hidden="true"><span></span></span>
-          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="false" aria-controls="sell-step-4"><span class="step__num" aria-hidden="true">04</span>סינון קונים</button></h3>
-          <div class="step__body" id="sell-step-4"><div><p>בודקים כל פנייה ומגיעים לביקור עם קונים רציניים ומתאימים.</p></div></div>
-        </li>
-        <li class="step">
-          <span class="step__bar" aria-hidden="true"><span></span></span>
-          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="false" aria-controls="sell-step-5"><span class="step__num" aria-hidden="true">05</span>משא ומתן</button></h3>
-          <div class="step__body" id="sell-step-5"><div><p>מנהלים את המשא ומתן בשמכם, כדי להגיע למחיר ולתנאים הנכונים לכם.</p></div></div>
-        </li>
-        <li class="step">
-          <span class="step__bar" aria-hidden="true"><span></span></span>
-          <h3 class="step__title"><button class="step__btn" type="button" aria-expanded="false" aria-controls="sell-step-6"><span class="step__num" aria-hidden="true">06</span>חתימה</button></h3>
-          <div class="step__body" id="sell-step-6"><div><p>מלווים אתכם עד החתימה על החוזה ומסירת המפתח.</p></div></div>
-        </li>
-      </ol>
-      <a class="btn btn--primary" href="/sell-apartment/#valuation"><span class="btn__label" data-text="לבדיקת שווי הדירה">לבדיקת שווי הדירה</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
-    </div>
-    <figure class="sellers__stage">
-      <img src="img/sellers/step-1-valuation.webp" alt="בדיקת תוכנית דירה לצורך הערכת שווי" width="900" height="1200" decoding="async" class="is-active">
-      <img src="img/sellers/step-2-photo.webp" alt="צילום מקצועי של סלון מואר בדירה למכירה" width="900" height="1200" loading="lazy" decoding="async">
-      <img src="img/sellers/step-3-marketing.webp" alt="מודעת דירה למכירה במחשב ובטלפון" width="900" height="1200" loading="lazy" decoding="async">
-      <img src="img/sellers/step-4-buyers.webp" alt="זוג קונים בביקור בדירה למכירה" width="900" height="1200" loading="lazy" decoding="async">
-      <img src="img/sellers/step-5-negotiation.webp" alt="פגישת משא ומתן על מכירת דירה" width="900" height="1200" loading="lazy" decoding="async">
-      <img src="img/sellers/keys.webp" alt="מסירת מפתחות של דירה לאחר חתימה על הסכם מכר" width="900" height="1200" loading="lazy" decoding="async">
-      <figcaption class="sellers__count" aria-hidden="true" dir="ltr">01 / 06</figcaption>
-    </figure>
-  </div>
-</section>
 
 <section class="about" aria-labelledby="about-title">
   <div class="about__marquee" dir="ltr" aria-hidden="true"><div class="about__track"><span class="about__item" lang="en">BUILDING THE STORY</span></div></div>
@@ -502,15 +504,15 @@
   <div class="reviews__head">
     <p class="reviews__eyebrow">ביקורות גוגל על תיווך נדל"ן</p>
     <h2 class="reviews__title" id="reviews-title">מה הלקוחות כותבים עלינו</h2>
-    <p class="reviews__score"><b>5.0</b><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><span>מתוך 59 ביקורות ב-Google</span></p>
+    <p class="reviews__score"><b>5.0</b><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><span>מתוך 53 ביקורות ב-Google</span></p>
   </div>
   <div class="reviews__carousel">
     <button class="reviews__nav reviews__nav--prev" type="button" aria-label="הביקורת הקודמת"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></button>
     <ul class="reviews__track" aria-label="ביקורות לקוחות מ-Google">
       <li class="review">
-        <div class="review__top"><span class="review__avatar" aria-hidden="true"><span>י</span></span><p class="review__name">יעל דוידוף</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g12.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">דן אטינגר</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
         <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
-        <p class="review__text">מתווך אלוף בשם יונתן, נתן לנו יחס אישי והוגן ברמה הגבוהה ביותר, דאג לסגור לנו את הדירה שרצינו ובמחיר שביקשנו, ואפילו שאחרינו פנו אליו מתחרים במחיר גבוה יותר, הוא נשאר נאמן לנו! הוא עמד במילה שלו והיה הגון וישר איתנו מההתחלה ועד הסוף, גם מוכרי הדירה היו מרוצים מאוד מהתיווך שלו ומסגירת העסקה. תודה ליונתן וממליצה בחום על התיווך המצוין!</p>
+        <p class="review__text">לחברת הר סלול יונתן נגר ומרדכי פרל!<br>תיאמנו פגישות רבות עם מתווכים לסייע בידינו למכור דירה ברחוב חב"ד בפ"ת.<br>התרשמנו מכם עמוקות בפגישה הראשונית ומתוך אינטואיציה שאין לה הסבר,בחירתנו בכם הוכחה כמוצלחת.<br>נסכתם בנו את בטחונכם שהדירה תמכר בלו"ז קצר, ידעתם להנחות אותנו, לעדכן בכל מהלך שעשיתם להקשיב, להציע להרהר יחד עימנו באפשרויות השונות שהיו בידינו.לסייע לנו רבות בקבלת ההחלטות תוך הבאה לידי ביטוי את המקצועיות שלכם שיקרה מפז. חשוב מכל ההרתמות שלכם למשימה ופגישות שערכתם עם לקוחות פוטנציאלים בשעות שונות בוקר צהרים וערב. בכל עת שנקראתם הוכחתם שאתם עושים את המיטב להצליח.<br>העסקה הסתיימה בהצלחה ומה שנותר לנו להביע את הערכתנו ולומר תודה .<br>אין ספק שנמליץ עליכם כמתווכים אמינים,מקצועיים וישרים .מאחלים לכם להמשיך בהצלחתכם.</p>
         <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
       </li>
       <li class="review">
@@ -520,21 +522,9 @@
         <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
       </li>
       <li class="review">
-        <div class="review__top"><span class="review__avatar" aria-hidden="true"><span>A</span></span><p class="review__name">Amir Sulam</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g25.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">אביגיל חממי</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
         <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
-        <p class="review__text">נפגשתי עם יונתן בנוגע לפרויקט חדש בפ"ת. התרשמתי ממנו שהוא מקצועי מאוד ומבין את התחום שלו. הוא הסביר את היתרונות של הדירה והעסקה בצורה ברורה וישרה וללא מניירות מיותרות. הוא ענה על כל שאלה ומה שלא ידע חזר אלי עם תשובות תוך כמה ימים. סגרנו איתו בסוף.</p>
-        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
-      </li>
-      <li class="review">
-        <div class="review__top"><span class="review__avatar" aria-hidden="true"><span>T</span></span><p class="review__name">tal kablis</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
-        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
-        <p class="review__text">ברצוננו להמליץ על יונתן ומרדכי שליוו אותנו בתהליך מכירת הדירה. לאורך כל הדרך הם הפגינו רוגע, רוח טובה ומקצועיות רבה, היו זמינים לכל שאלה והתייעצות ונתנו לנו ביטחון לאורך כל הדרך. בזכות ניסיונם העשיר והידע הרחב בתחום, הם הצליחו למצוא את הקונה המתאים ביותר, תוך התחשבות בדרישותינו האישיות ובתנאי לוח התשלומים שביקשנו. השירות שלהם היה מעל ומעבר לציפיותינו, ואנחנו ממליצים עליהם בחום!</p>
-        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
-      </li>
-      <li class="review">
-        <div class="review__top"><span class="review__avatar" aria-hidden="true"><span>א</span></span><p class="review__name">אריאל וינמן</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
-        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
-        <p class="review__text">ממליץ בחום!! יונתן האלוף ליווה אותי ברכישת דירה מקבלן. אחרי שפגשתי מספר רב של מתווכים ועסקאות, העסקה שיונתן הציג הייתה הטובה והמתאימה ביותר עבורי, ובהמשך ליווה אותנו בתהליך ברמה מקצועית ואנושית מאוד גבוהה וטיפל במהירות בעניינים שיכלו לעכב את העסקה. תודה רבה</p>
+        <p class="review__text">צוות מדהים,<br>שירות אמין ומקצועי זמינות ותמיכה בכל שעה,<br>מכרו לי את הדירה תוך 3 שבועות במחיר מעל המבוקש<br>ממליצה בחוםםםםם על יונתן ומרדכי!!!!!</p>
         <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
       </li>
       <li class="review">
@@ -544,27 +534,99 @@
         <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
       </li>
       <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g23.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">תאיר סלוצקין</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">מרדכי ויונתן מכרו דירתי תוך שבוע בלבד.<br>עזרו לי במציאת הדירה<br>תודה רבה לכם!!</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g22.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">רונית ויסברג</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">שני המתווכים אמינים יודעים את עבודתם ,היה כיף לעבוד איתם ממליצה מכל הלב.רונית</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g30.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">מוטי עויזר Motty Oyzer</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">מהנסיון האישי שלי מדובר בחבר'ה שבאים לתת עבודה הן במכירה והן בכל מה שמסביב אמינים מקצועיים ובעיקר שירות מהיר ונוח שמח שעשיתי הכל דרככם אלופים !</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g20.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">Amit Segal</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">ברצוני לשבח את יונתן ומרדכי,<br>על מקצועיות ואדיבות שממש לא מובנת במקצוע הזה<br>נתנו 100 אחוז והתוצאות לא איחרו לבוא.<br>ממליץ בחום 💪💪💪</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g9.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">חן אברהם</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">ממליצה בחום על יונתן ומרדכי התותחים!! אנשים אמינים, מקצועיים, סבלניים, אדיבים ויודעים להגיע לסגירת עסקה כששני הצדדים מרוצים! אם אתם רוצים ראש שקט, קחו אותם.</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g18.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">Sharonim Marketing</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">עזרו לי לאורך כל הדרך, בעלי מקצוע ברמה מאד גבוהה.<br>שרותיים ואמינים<br>ממליץ מכל הלב!!!</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
         <div class="review__top"><span class="review__avatar" aria-hidden="true"><span>ע</span></span><p class="review__name">עינב בוהדנה</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
         <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
         <p class="review__text">משרד תיווך מעולה! שווים כל שקל ויותר..מהרגע הראשון יונתן היה צמוד אלינו לכל אורך התהליך, היה זמין, מקצועי, תומך ועשה ממש מעל ומעבר למה שציפינו. תותח ממש! מומלץ בחום!!! אין מתווכים כמו מרדכי ויונתן. המון המון תודה לשניכם.</p>
         <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
       </li>
       <li class="review">
-        <div class="review__top"><span class="review__avatar" aria-hidden="true"><span>ח</span></span><p class="review__name">חן אברהם</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g21.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">מיכל אהרוני</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
         <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
-        <p class="review__text">ממליצה בחום על יונתן ומרדכי התותחים!! אנשים אמינים, מקצועיים, סבלניים, אדיבים ויודעים להגיע לסגירת עסקה כששני הצדדים מרוצים! אם אתם רוצים ראש שקט, קחו אותם.</p>
+        <p class="review__text">יונתן ומרדכי אמינים ומקצועיים הבחירה הכי טובה שעשיתי ! מרוצה וממליצה בחום.</p>
         <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
       </li>
       <li class="review">
-        <div class="review__top"><span class="review__avatar" aria-hidden="true"><span>M</span></span><p class="review__name">Moran</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g15.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">Moran</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
         <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
         <p class="review__text">קיבלתי ליווי מקצועי ואמין לאורך כל הדרך. תמיד זמינים לכל שאלה ובקשה. מכרו לי את הדירה במהירות, וללא לחץ, גם באשר למחיר , יצאנו מרוצים. מומלץ בחום !! תודה רבה לכם אלופים !!</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g26.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">אייל טירקישר</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">ממליץ בחום לכל מי שמחפש בעלי מקצוע אמינים ואיכותיים בתחום הנדל"ן על הצוות המנצח יונתן ומרדכי 💥💪</p>
         <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
       </li>
       <li class="review">
         <div class="review__top"><span class="review__avatar" aria-hidden="true"><span>ש</span></span><p class="review__name">שיר בוחבוט</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
         <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
         <p class="review__text">תודה ליונתן ומרדכי על היחס המקצועי והחם עד למעמד החתימה של המכר ! סובלניים ומקצוענים עזרו לנו בכל דבר שרק היינו צריכים אנשים אמינים ואיכותיים תודה על הכל</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><span>T</span></span><p class="review__name">tal kablis</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">ברצוננו להמליץ על יונתן ומרדכי שליוו אותנו בתהליך מכירת הדירה. לאורך כל הדרך הם הפגינו רוגע, רוח טובה ומקצועיות רבה, היו זמינים לכל שאלה והתייעצות ונתנו לנו ביטחון לאורך כל הדרך. בזכות ניסיונם העשיר והידע הרחב בתחום, הם הצליחו למצוא את הקונה המתאים ביותר, תוך התחשבות בדרישותינו האישיות ובתנאי לוח התשלומים שביקשנו. השירות שלהם היה מעל ומעבר לציפיותינו, ואנחנו ממליצים עליהם בחום!</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><span>י</span></span><p class="review__name">יעל דוידוף</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">מתווך אלוף בשם יונתן, נתן לנו יחס אישי והוגן ברמה הגבוהה ביותר, דאג לסגור לנו את הדירה שרצינו ובמחיר שביקשנו, ואפילו שאחרינו פנו אליו מתחרים במחיר גבוה יותר, הוא נשאר נאמן לנו! הוא עמד במילה שלו והיה הגון וישר איתנו מההתחלה ועד הסוף, גם מוכרי הדירה היו מרוצים מאוד מהתיווך שלו ומסגירת העסקה. תודה ליונתן וממליצה בחום על התיווך המצוין!</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g2.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">אריאל וינמן</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">ממליץ בחום!! יונתן האלוף ליווה אותי ברכישת דירה מקבלן. אחרי שפגשתי מספר רב של מתווכים ועסקאות, העסקה שיונתן הציג הייתה הטובה והמתאימה ביותר עבורי, ובהמשך ליווה אותנו בתהליך ברמה מקצועית ואנושית מאוד גבוהה וטיפל במהירות בעניינים שיכלו לעכב את העסקה. תודה רבה</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><span>A</span></span><p class="review__name">Amir Sulam</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">נפגשתי עם יונתן בנוגע לפרויקט חדש בפ"ת. התרשמתי ממנו שהוא מקצועי מאוד ומבין את התחום שלו. הוא הסביר את היתרונות של הדירה והעסקה בצורה ברורה וישרה וללא מניירות מיותרות. הוא ענה על כל שאלה ומה שלא ידע חזר אלי עם תשובות תוך כמה ימים. סגרנו איתו בסוף.</p>
+        <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
+      </li>
+      <li class="review">
+        <div class="review__top"><span class="review__avatar" aria-hidden="true"><img src="img/reviews/g17.webp" alt="" width="48" height="48" loading="lazy"></span><p class="review__name">יעל גולי חדד</p><svg class="review__g" aria-hidden="true"><use href="#r-g"/></svg></div>
+        <div class="review__rating" role="img" aria-label="5 מתוך 5 כוכבים"><span class="reviews__stars" aria-hidden="true"><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg><svg><use href="#r-star"/></svg></span><svg class="review__verified" aria-hidden="true"><use href="#r-check"/></svg></div>
+        <p class="review__text">שירות מעולה... קנינו דרכו דירה מציאה!! בנאדם נחמד ואדיב מאוד , עונה לכל שאלה עם ים של סבלנות... אמין מאוד (לא כמו כולם...) אנחנו ממליצים בחום!!!<br>ועוד נפגש בדירה הבאה..;)</p>
         <button class="review__more" type="button" aria-expanded="false" hidden>קרא עוד</button>
       </li>
     </ul>
@@ -629,8 +691,8 @@
         <div class="faq__a" id="faq-a2" role="region"><div><p>לא. בפרויקטים חדשים שאנחנו משווקים מטעם היזם, הרוכשים לא משלמים לנו עמלה. אנחנו מלווים אתכם מהביקור הראשון במשרד המכירות ועד החתימה ומסירת המפתח.</p></div></div>
       </li>
       <li class="faq__item" data-img="2">
-        <h3 class="faq__q"><button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-a3"><span class="faq__qtext">איך עושים הערכת שווי לדירה, והאם זו שמאות?</span><span class="faq__plus" aria-hidden="true"></span></button></h3>
-        <div class="faq__a" id="faq-a3" role="region"><div><p>אנחנו בודקים את הדירה עצמה, את השכונה, את הקומה ואת המצב, ומשווים לעסקאות דומות שנסגרו לאחרונה באזור. כך נקבע מחיר מבוסס ומציאותי לשיווק. חשוב לדעת: הערכת שווי של מתווך אינה שמאות מקרקעין, ולצורך משכנתא או הליך משפטי נדרש שמאי מוסמך.</p></div></div>
+        <h3 class="faq__q"><button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-a3"><span class="faq__qtext">איך עושים הערכת מחיר שוק לדירה, והאם זו שמאות?</span><span class="faq__plus" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="faq-a3" role="region"><div><p>אנחנו בודקים את הדירה עצמה, את השכונה, את הקומה ואת המצב, ומשווים לעסקאות דומות שנסגרו לאחרונה באזור. כך נקבע מחיר מבוסס ומציאותי לשיווק. חשוב לדעת: הערכת מחיר שוק של מתווך אינה שמאות מקרקעין, ולצורך משכנתא או הליך משפטי נדרש שמאי מוסמך.</p></div></div>
       </li>
       <li class="faq__item" data-img="3">
         <h3 class="faq__q"><button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-a4"><span class="faq__qtext">כמה זמן לוקח למכור דירה באזור המרכז?</span><span class="faq__plus" aria-hidden="true"></span></button></h3>
@@ -664,7 +726,7 @@
     <figure class="faq__visual">
       <img src="img/sellers/step-5-negotiation.webp" alt="פגישת משא ומתן על דירה" decoding="async" class="is-active">
       <img src="img/projects/sapir.webp" alt="הדמיית פרויקט ספיר 25 עד 29 בפתח תקווה" loading="lazy" decoding="async">
-      <img src="img/sellers/step-1-valuation.webp" alt="בדיקת תוכנית דירה לצורך הערכת שווי" loading="lazy" decoding="async">
+      <img src="img/sellers/step-1-valuation.webp" alt="בדיקת תוכנית דירה לצורך הערכת מחיר שוק" loading="lazy" decoding="async">
       <img src="img/sellers/step-3-marketing.webp" alt="מודעת דירה למכירה במחשב ובטלפון" loading="lazy" decoding="async">
       <img src="img/sellers/keys.webp" alt="מסירת מפתחות של דירה" loading="lazy" decoding="async">
       <img src="img/projects/hatzanchanim.webp" alt="הדמיית פרויקט הצנחנים 16 בעין גנים, פתח תקווה" loading="lazy" decoding="async">
@@ -674,7 +736,7 @@
       <img src="img/about/partners.webp" alt="מרדכי פרל ויונתן נגר, השותפים בהר סלול נדל&quot;ן" loading="lazy" decoding="async">
     </figure>
   </div>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"כמה עולים דמי התיווך?","acceptedAnswer":{"@type":"Answer","text":"שיעור דמי התיווך נקבע מראש ובכתב, בהזמנת שירותי תיווך נדל\"ן שחותמים עליה לפני שמתחילים, כפי שמחייב חוק המתווכים במקרקעין. כך אין הפתעות בסוף הדרך. נשמח לפרט את התנאים בשיחה קצרה."}},{"@type":"Question","name":"האם משלמים עמלה כשקונים דירה חדשה בפרויקט שאתם משווקים?","acceptedAnswer":{"@type":"Answer","text":"לא. בפרויקטים חדשים שאנחנו משווקים מטעם היזם, הרוכשים לא משלמים לנו עמלה. אנחנו מלווים אתכם מהביקור הראשון במשרד המכירות ועד החתימה ומסירת המפתח."}},{"@type":"Question","name":"איך עושים הערכת שווי לדירה, והאם זו שמאות?","acceptedAnswer":{"@type":"Answer","text":"אנחנו בודקים את הדירה עצמה, את השכונה, את הקומה ואת המצב, ומשווים לעסקאות דומות שנסגרו לאחרונה באזור. כך נקבע מחיר מבוסס ומציאותי לשיווק. חשוב לדעת: הערכת שווי של מתווך אינה שמאות מקרקעין, ולצורך משכנתא או הליך משפטי נדרש שמאי מוסמך."}},{"@type":"Question","name":"כמה זמן לוקח למכור דירה באזור המרכז?","acceptedAnswer":{"@type":"Answer","text":"זה תלוי במחיר, בשכונה, במצב הדירה ובשוק באותה תקופה. מה שמקצר את הדרך הוא מחיר נכון מההתחלה, צילום טוב ושיווק נכון: באתר שלנו, ביד2, במדלן ובקמפיינים ממומנים, עם סינון של קונים רציניים."}},{"@type":"Question","name":"האם חייבים לחתום על בלעדיות?","acceptedAnswer":{"@type":"Answer","text":"לא, בלעדיות היא אפשרות ולא חובה. אם בוחרים בה, החוק מגביל את משך הבלעדיות ומחייב את המתווך לבצע פעולות שיווק מוגדרות. נסביר לכם את היתרונות והחסרונות לפני שמחליטים."}},{"@type":"Question","name":"באילו אזורים אתם פועלים?","acceptedAnswer":{"@type":"Answer","text":"המשרד שלנו בגזית 7 בפתח תקווה, ואנחנו נותנים שירותי תיווך נדל\"ן בכל המרכז, מחדרה בצפון ועד ראשון לציון בדרום, כולל השרון וגוש דן. הפרויקטים החדשים שאנחנו משווקים כרגע נמצאים בפתח תקווה, בשכונות עין גנים, שיפר, המרכז השקט, כפר גנים ואחדות."}},{"@type":"Question","name":"מה ההבדל בין קנייה מקבלן לקנייה של דירה יד שנייה?","acceptedAnswer":{"@type":"Answer","text":"בדירה חדשה מקבלן משלמים בדרך כלל בשלבים לפי התקדמות הבנייה, ומקבלים בטוחה לפי חוק המכר, אבל מחכים למסירה. בדירה יד שנייה רואים בדיוק מה קונים ונכנסים מהר יותר, ולעיתים צריך לשפץ. בתיווך נדל\"ן שלנו נעזור לכם להשוות ולבחור את מה שמתאים לכם."}},{"@type":"Question","name":"מה זה התחדשות עירונית ופינוי בינוי?","acceptedAnswer":{"@type":"Answer","text":"אלה פרויקטים שבהם בניין ישן נהרס ונבנה במקומו בניין חדש וגדול יותר, כשהדיירים הקיימים מקבלים דירות חדשות והדירות הנוספות נמכרות לציבור. חלק מהפרויקטים שאנחנו משווקים בפתח תקווה, כמו הצנחנים 16 ורוטשילד 160, הם הריסה ובנייה חדשה."}},{"@type":"Question","name":"אתם עובדים גם עם יזמים?","acceptedAnswer":{"@type":"Answer","text":"כן. לצד תיווך נדל\"ן לקונים ולמוכרים, אנחנו מלווים יזמים בשיווק פרויקטים חדשים משלב התכנון המוקדם: אסטרטגיה, תמהיל דירות, מיתוג, תמחור, קמפיינים וניהול מכירות עד הדירה האחרונה. פרטים נוספים באזור היזמים."}},{"@type":"Question","name":"איך מתחילים?","acceptedAnswer":{"@type":"Answer","text":"השאירו פרטים בטופס למטה, התקשרו או שלחו הודעה בוואטסאפ, ונחזור לכל פנייה תוך 24 שעות. בשיחה הראשונה נבין מה אתם מחפשים, ונבנה יחד את הצעדים הבאים."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"כמה עולים דמי התיווך?","acceptedAnswer":{"@type":"Answer","text":"שיעור דמי התיווך נקבע מראש ובכתב, בהזמנת שירותי תיווך נדל\"ן שחותמים עליה לפני שמתחילים, כפי שמחייב חוק המתווכים במקרקעין. כך אין הפתעות בסוף הדרך. נשמח לפרט את התנאים בשיחה קצרה."}},{"@type":"Question","name":"האם משלמים עמלה כשקונים דירה חדשה בפרויקט שאתם משווקים?","acceptedAnswer":{"@type":"Answer","text":"לא. בפרויקטים חדשים שאנחנו משווקים מטעם היזם, הרוכשים לא משלמים לנו עמלה. אנחנו מלווים אתכם מהביקור הראשון במשרד המכירות ועד החתימה ומסירת המפתח."}},{"@type":"Question","name":"איך עושים הערכת מחיר שוק לדירה, והאם זו שמאות?","acceptedAnswer":{"@type":"Answer","text":"אנחנו בודקים את הדירה עצמה, את השכונה, את הקומה ואת המצב, ומשווים לעסקאות דומות שנסגרו לאחרונה באזור. כך נקבע מחיר מבוסס ומציאותי לשיווק. חשוב לדעת: הערכת מחיר שוק של מתווך אינה שמאות מקרקעין, ולצורך משכנתא או הליך משפטי נדרש שמאי מוסמך."}},{"@type":"Question","name":"כמה זמן לוקח למכור דירה באזור המרכז?","acceptedAnswer":{"@type":"Answer","text":"זה תלוי במחיר, בשכונה, במצב הדירה ובשוק באותה תקופה. מה שמקצר את הדרך הוא מחיר נכון מההתחלה, צילום טוב ושיווק נכון: באתר שלנו, ביד2, במדלן ובקמפיינים ממומנים, עם סינון של קונים רציניים."}},{"@type":"Question","name":"האם חייבים לחתום על בלעדיות?","acceptedAnswer":{"@type":"Answer","text":"לא, בלעדיות היא אפשרות ולא חובה. אם בוחרים בה, החוק מגביל את משך הבלעדיות ומחייב את המתווך לבצע פעולות שיווק מוגדרות. נסביר לכם את היתרונות והחסרונות לפני שמחליטים."}},{"@type":"Question","name":"באילו אזורים אתם פועלים?","acceptedAnswer":{"@type":"Answer","text":"המשרד שלנו בגזית 7 בפתח תקווה, ואנחנו נותנים שירותי תיווך נדל\"ן בכל המרכז, מחדרה בצפון ועד ראשון לציון בדרום, כולל השרון וגוש דן. הפרויקטים החדשים שאנחנו משווקים כרגע נמצאים בפתח תקווה, בשכונות עין גנים, שיפר, המרכז השקט, כפר גנים ואחדות."}},{"@type":"Question","name":"מה ההבדל בין קנייה מקבלן לקנייה של דירה יד שנייה?","acceptedAnswer":{"@type":"Answer","text":"בדירה חדשה מקבלן משלמים בדרך כלל בשלבים לפי התקדמות הבנייה, ומקבלים בטוחה לפי חוק המכר, אבל מחכים למסירה. בדירה יד שנייה רואים בדיוק מה קונים ונכנסים מהר יותר, ולעיתים צריך לשפץ. בתיווך נדל\"ן שלנו נעזור לכם להשוות ולבחור את מה שמתאים לכם."}},{"@type":"Question","name":"מה זה התחדשות עירונית ופינוי בינוי?","acceptedAnswer":{"@type":"Answer","text":"אלה פרויקטים שבהם בניין ישן נהרס ונבנה במקומו בניין חדש וגדול יותר, כשהדיירים הקיימים מקבלים דירות חדשות והדירות הנוספות נמכרות לציבור. חלק מהפרויקטים שאנחנו משווקים בפתח תקווה, כמו הצנחנים 16 ורוטשילד 160, הם הריסה ובנייה חדשה."}},{"@type":"Question","name":"אתם עובדים גם עם יזמים?","acceptedAnswer":{"@type":"Answer","text":"כן. לצד תיווך נדל\"ן לקונים ולמוכרים, אנחנו מלווים יזמים בשיווק פרויקטים חדשים משלב התכנון המוקדם: אסטרטגיה, תמהיל דירות, מיתוג, תמחור, קמפיינים וניהול מכירות עד הדירה האחרונה. פרטים נוספים באזור היזמים."}},{"@type":"Question","name":"איך מתחילים?","acceptedAnswer":{"@type":"Answer","text":"השאירו פרטים בטופס למטה, התקשרו או שלחו הודעה בוואטסאפ, ונחזור לכל פנייה תוך 24 שעות. בשיחה הראשונה נבין מה אתם מחפשים, ונבנה יחד את הצעדים הבאים."}}]}</script>
 </section>
 </main>
 
@@ -687,10 +749,15 @@
   </svg>
   <div class="contact-bar">
     <div class="contact-bar__intro">
-      <h2 class="contact-bar__title">צרו איתנו קשר</h2>
-      <p class="contact-bar__sub">לכל שאלה<span aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></p>
+      <h2 class="contact-bar__title">רוצים למכור את הדירה?</h2>
+      <p class="contact-bar__sub">השאירו פרטים לבדיקת הערכת מחיר שוק<span aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></p>
     </div>
     <form class="contact-bar__form" action="/contact/" method="post">
+      <fieldset class="search__type contact-bar__type">
+        <legend class="sr-only">אני רוצה</legend>
+        <input type="radio" name="intent" id="cb-sell" value="sell" checked><label for="cb-sell">למכור דירה</label>
+        <input type="radio" name="intent" id="cb-buy" value="buy"><label for="cb-buy">לקנות דירה</label>
+      </fieldset>
       <div class="contact-bar__fields">
         <label class="contact-bar__field"><span class="sr-only">שם</span><input type="text" name="name" placeholder="שם" autocomplete="name" required></label>
         <label class="contact-bar__field"><span class="sr-only">טלפון</span><input type="tel" name="phone" placeholder="טלפון" autocomplete="tel" inputmode="tel" required></label>
@@ -715,14 +782,14 @@
           <li><a href="mailto:harsalul@gmail.com" aria-label="שליחת מייל"><svg aria-hidden="true" focusable="false"><use href="#f-mail"/></svg></a></li>
           <li><a href="https://wa.me/972504545900" target="_blank" rel="noopener" aria-label="הודעה בוואטסאפ"><svg aria-hidden="true" focusable="false"><use href="#f-wa"/></svg></a></li>
         </ul>
-        <a class="site-footer__logo" href="/" aria-label="הר סלול נדל&quot;ן, לדף הבית"><img src="img/logo-har-stacked-gold.svg" alt="הר סלול נדל&quot;ן" width="180" height="146" loading="lazy"></a>
+        <a class="site-footer__logo" href="/" aria-label="הר סלול נדל&quot;ן, לדף הבית"><img src="img/logo-har-stacked-white.svg" alt="הר סלול נדל&quot;ן" width="180" height="146" loading="lazy"></a>
         <p class="site-footer__tagline">בונים את הסיפור, בונים את החלום</p>
       </div>
       <address class="site-footer__contact">
         <p class="site-footer__h">המשרד שלנו</p>
         <ul>
           <li>גזית 7, קומה 3, פתח תקווה</li>
-          <li>טלפון: <a href="tel:0504545900">050-4545900</a> · <a href="tel:0509372272">050-9372272</a></li>
+          <li>טלפון: <a href="tel:0504545900">050-4545900</a></li>
           <li>מייל: <a href="mailto:harsalul@gmail.com">harsalul@gmail.com</a></li>
         </ul>
       </address>

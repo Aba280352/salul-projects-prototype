@@ -1,0 +1,132 @@
+/* גרסה 3 (25.10.2026): מצב בהיר, בהשראת orencohengroup.com. בלי שחור וזהב:
+   הזהב הבוהק הוחלף בשמנת (#F4EDDF), הסקשנים מתחלפים בין שמנת ללבן, ורק הפוטר נשאר כהה.
+   טקסט והדגשות על רקע בהיר בגוון טאופ חם (#7D6649: 5.4:1 על לבן, 4.7:1 על שמנת).
+   נטען אחרי כל קבצי העיצוב. לחזרה לגרסה הכהה מספיק להסיר את הקובץ הזה ואת שני לוגואי הזהב ב-HTML. */
+
+:root {
+  --cream: #F4EDDF;
+  --accent: #7D6649;
+  --gold-1: var(--accent);
+  --gold-2: var(--accent);
+  --gold-decor: var(--accent);
+  --gold-grad: linear-gradient(90deg, var(--cream) 0%, var(--cream) 100%);
+  --gold-grad-text: linear-gradient(90deg, var(--accent) 0%, var(--accent) 100%);
+  --gold-glow: none;
+}
+
+/* טקסט בגרדיאנט זהב: עכשיו צבע טאופ אחיד */
+.gold-text, .about__item, .areas__title span, .project__num, .services::before {
+  background: none; -webkit-text-fill-color: currentColor; color: var(--accent);
+}
+.about__item { opacity: .35; }
+.services::before { opacity: .07; }
+.about__quote { color: var(--accent); opacity: .3; }
+
+/* ---------- כפתורים ---------- */
+.btn--primary { --btn-fg: var(--paper); background: var(--ink); color: var(--paper); }
+.btn--primary .btn__circle { background: var(--cream); color: var(--ink); }
+.btn--ghost .btn__circle { color: var(--cream); }
+.btn--outline-light:hover { box-shadow: inset 0 0 0 1px var(--cream); }
+
+/* ---------- רקעים: שמנת ולבן לסירוגין ---------- */
+.stats, .areas, .listings, .about, .magazine { background-color: #FFFFFF; }
+.strip, .sellers, .services, .projects, .reviews, .faq { background-color: var(--cream); }
+.site-footer { background-color: #FFFFFF; }
+/* תגיות בסקשנים בצבע שמנת: גלולה לבנה */
+.sellers__eyebrow, .services__eyebrow, .projects__eyebrow, .reviews__eyebrow, .faq__eyebrow { background: #FFFFFF; }
+
+/* ---------- הדר: זכוכית בהירה ---------- */
+.site-header { background: rgba(255, 255, 255, .88); border-bottom-color: var(--line); }
+.nav-toggle, .nav__link, .nav__sub-btn { color: var(--ink); }
+.nav { background: #FFFFFF; }
+.nav__item { border-bottom-color: var(--line); }
+@media (min-width: 1025px) {
+  .nav { background: none; }
+  .nav__item { border-bottom: 0; }
+  .nav__sub { background: rgba(255, 255, 255, .97); border-color: var(--line); box-shadow: 0 20px 40px -24px rgba(0, 25, 43, .3); }
+  .nav__sub li + li { border-top-color: var(--line); }
+  .nav__sub a { color: var(--ink); }
+}
+
+/* ---------- פתיח: רקע שמנת ולוגו כהה ---------- */
+.intro { background: var(--cream); }
+.intro__grid span { background: rgba(125, 102, 73, .18); }
+
+/* ---------- מסך פתיחה: תמונה עם הצללה, ההדגשות בשמנת ---------- */
+.hero { --gold-1: var(--cream); --gold-2: var(--cream); }
+
+/* ---------- סטריפ ---------- */
+.strip { border-block-color: var(--line); }
+.strip__item { color: var(--ink); }
+.strip__item span { background: none; -webkit-text-fill-color: currentColor; color: var(--ink); }
+.strip__item::before { background: var(--accent); }
+
+/* ---------- מספרים וסליידרים ---------- */
+.stats__label::before, .step__bar span { background: var(--accent); }
+
+/* ---------- אזורי פעילות ---------- */
+.areas { color: var(--ink); }
+.areas__title, .areas__card-name, .areas__cta-text { color: var(--ink); }
+.areas__eyebrow { color: var(--accent); }
+.areas__hint, .areas__legend { color: var(--text-muted); }
+.areas__card { border-color: var(--line); background: #FFFFFF; }
+.areas__card.is-open, .areas__card.is-hot { border-color: rgba(125, 102, 73, .45); background: var(--cream); }
+.areas__badge { border-color: var(--line); color: var(--text-muted); }
+.areas__badge--hq { background: var(--ink); color: #FFFFFF; }
+.areas__card-desc { color: var(--text-muted); }
+.areas__chips li { border-color: rgba(125, 102, 73, .4); color: var(--ink); background: #FFFFFF; }
+.areas__cta { background: var(--cream); border-color: rgba(125, 102, 73, .3); }
+.areas__map { border-color: var(--line); background: #FBF8F2; }
+.areas__svg rect { fill: none; }
+.areas__land { fill: var(--cream); }
+.areas__coast { stroke: rgba(125, 102, 73, .6); }
+.areas__band { fill: rgba(125, 102, 73, .1); stroke: var(--accent); }
+.areas__pin { color: var(--ink); }
+.areas__pin-shape { fill: var(--accent); stroke: #FFFFFF; }
+.areas__pin-core { fill: #FFFFFF; }
+.areas__pin-icon { filter: drop-shadow(0 6px 8px rgba(0, 25, 43, .2)); }
+.areas__pin-label { background: #FFFFFF; border-color: var(--line); color: var(--ink); }
+.areas__pin.is-active .areas__pin-label, .areas__pin.is-hot .areas__pin-label, .areas__pin:hover .areas__pin-label { border-color: var(--ink); background: var(--ink); color: #FFFFFF; }
+.areas__legend-band::before { background: rgba(125, 102, 73, .1); }
+
+/* ---------- שירותים: הכרטיסים הם תמונות עם הצללה, רק הכותרת עוברת לכהה ---------- */
+.services { color: var(--ink); }
+.services__title { color: var(--ink); }
+
+/* ---------- חיפוש ונכסים ---------- */
+.search__send { background: var(--ink); color: #FFFFFF; }
+
+/* ---------- פרויקטים ---------- */
+.projects { color: var(--ink); }
+.projects__title, .project__name, .project__tags li { color: var(--ink); }
+.projects__intro, .project__desc { color: var(--text-muted); }
+.project__place { color: var(--text-muted); }
+.project__tags li { box-shadow: inset 0 0 0 1px rgba(0, 25, 43, .18); background: #FFFFFF; }
+.project__media { background: #E9E1D2; }
+@media (min-width: 1025px) {
+  .projects__list { border-bottom-color: rgba(0, 25, 43, .14); }
+  .project { border-top-color: rgba(0, 25, 43, .14); }
+  .project__name, .project__place { color: rgba(0, 25, 43, .38); }
+  .project.is-active .project__name { color: var(--ink); }
+  .project.is-active .project__place { color: var(--text-muted); }
+}
+
+/* ---------- ביקורות ושאלות ---------- */
+.review__avatar { background: var(--cream); }
+.review__avatar span { background: none; -webkit-text-fill-color: currentColor; color: var(--ink); }
+.reviews__nav:hover { background: var(--ink); color: #FFFFFF; }
+.faq__plus { background: #FFFFFF; }
+.faq__item.is-open .faq__plus { background: var(--ink); color: #FFFFFF; }
+
+/* ---------- מגזין ---------- */
+.article__tag::before { background: var(--cream); }
+
+/* ---------- טופס ופוטר: הפוטר היחיד שנשאר כהה, ובו ההדגשות בשמנת ---------- */
+.contact-bar__send { background: var(--ink); color: #FFFFFF; }
+.contact-bar__type { margin: 0 0 14px; }
+.site-footer__main { --gold-1: var(--cream); --gold-2: var(--cream); --gold-grad: linear-gradient(90deg, var(--cream) 0%, var(--cream) 100%); }
+.site-footer__main .site-footer__mark { background: none; -webkit-text-fill-color: currentColor; color: var(--cream); }
+
+/* תמונות הפרופיל מגוגל, למי שיש לו תמונה אמיתית (לאחרים נשארת האות הראשונה) */
+.review__avatar { overflow: hidden; }
+.review__avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
