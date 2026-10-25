@@ -28,21 +28,9 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/dividers.css">
   <link rel="stylesheet" href="css/texture.css">
-  <link rel="stylesheet" href="css/intro.css">
   <link rel="stylesheet" href="css/theme-light.css">
-  <script>
-    /* הפתיח רץ בכל טעינה, חוץ ממי שביקש פחות תנועה. מחליטים לפני הציור כדי שלא יהבהב */
-    document.documentElement.classList.add(matchMedia('(prefers-reduced-motion: reduce)').matches ? 'intro-skip' : 'intro-run');
-  </script>
 </head>
 <body>
-<div class="intro" id="intro" aria-hidden="true">
-  <div class="intro__grid"><span class="v" style="--p:0%;--i:0"></span><span class="v" style="--p:10%;--i:1"></span><span class="v" style="--p:20%;--i:2"></span><span class="v" style="--p:30%;--i:3"></span><span class="v" style="--p:40%;--i:4"></span><span class="v" style="--p:50%;--i:5"></span><span class="v" style="--p:60%;--i:6"></span><span class="v" style="--p:70%;--i:7"></span><span class="v" style="--p:80%;--i:8"></span><span class="v" style="--p:90%;--i:9"></span><span class="v" style="--p:100%;--i:10"></span><span class="h" style="--p:0%;--i:0"></span><span class="h" style="--p:20%;--i:1"></span><span class="h" style="--p:40%;--i:2"></span><span class="h" style="--p:60%;--i:3"></span><span class="h" style="--p:80%;--i:4"></span><span class="h" style="--p:100%;--i:5"></span></div>
-  <div class="intro__logo">
-    <img class="intro__ghost" src="img/logo-har-stacked-dark.svg" width="1723" height="1399" alt="">
-    <img class="intro__fill" src="img/logo-har-stacked-dark.svg" width="1723" height="1399" alt="">
-  </div>
-</div>
 <header class="site-header" id="site-header">
   <div class="site-header__inner">
     <a class="logo" href="/" aria-label="הר סלול נדל&quot;ן, לדף הבית">
@@ -162,7 +150,7 @@
           <div class="step__body" id="sell-step-6"><div><p>מלווים אתכם עד החתימה על החוזה ומסירת המפתח.</p></div></div>
         </li>
       </ol>
-      <a class="btn btn--primary" href="/sell-apartment/#valuation"><span class="btn__label" data-text="לבדיקת שווי הדירה">לבדיקת שווי הדירה</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
+      <a class="btn btn--primary" href="/sell-apartment/#valuation"><span class="btn__label" data-text="להערכת מחיר שוק לדירה">להערכת מחיר שוק לדירה</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
     </div>
     <figure class="sellers__stage">
       <img src="img/sellers/step-1-valuation.webp" alt="בדיקת תוכנית דירה לצורך הערכת מחיר שוק" width="900" height="1200" decoding="async" class="is-active">
@@ -293,7 +281,7 @@
       <h3 class="service__title">הערכת מחיר שוק</h3>
       <div class="service__body"><div class="service__inner">
         <p class="service__text">הערכת מחיר שוק היא הצעד הראשון בכל תיווך נדל"ן: מחיר מבוסס ומציאותי לדירה שלכם, לפי הדירה, השכונה ועסקאות דומות.</p>
-        <a class="btn btn--primary" href="/sell-apartment/#valuation"><span class="btn__label" data-text="לבדיקת שווי">לבדיקת שווי</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
+        <a class="btn btn--primary" href="/sell-apartment/#valuation"><span class="btn__label" data-text="להערכת מחיר שוק">להערכת מחיר שוק</span><span class="btn__circle" aria-hidden="true"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="nonzero" clip-rule="nonzero" d="M21.5 12C21.5 12.276 21.276 12.5 21 12.5L4.207 12.5L10.353 18.646C10.548 18.841 10.548 19.158 10.353 19.353C10.255 19.451 10.127 19.499 9.999 19.499C9.871 19.499 9.743 19.45 9.645 19.353L2.645 12.353C2.599 12.307 2.562 12.251 2.537 12.19C2.486 12.068 2.486 11.93 2.537 11.808C2.562 11.746 2.599 11.691 2.645 11.645L9.645 4.645C9.84 4.45 10.157 4.45 10.352 4.645C10.547 4.84 10.547 5.157 10.352 5.352L4.206 11.498L21 11.498C21.276 11.5 21.5 11.724 21.5 12Z"/></svg></span></a>
       </div></div>
     </li>
     <li class="service" style="background-image: url(img/listings/resale-4-rooms.webp)">
@@ -805,7 +793,6 @@
     </div>
   </div>
 </footer>
-<script src="js/intro.js" defer></script>
 <script src="js/header.js" defer></script>
 <script src="js/vendor/gsap.min.js" defer></script>
 <script src="js/hero-title.js" defer></script>

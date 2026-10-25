@@ -15,16 +15,20 @@
 }
 
 /* טקסט בגרדיאנט זהב: עכשיו צבע טאופ אחיד */
-.gold-text, .about__item, .areas__title span, .project__num, .services::before {
+.gold-text, .about__item, .areas__title span, .project__num {
   background: none; -webkit-text-fill-color: currentColor; color: var(--accent);
 }
 .about__item { opacity: .35; }
-.services::before { opacity: .07; }
+/* בלי המילה SERVICES הענקית ברקע */
+.services::before { content: none; }
 .about__quote { color: var(--accent); opacity: .3; }
 
 /* ---------- כפתורים ---------- */
 .btn--primary { --btn-fg: var(--paper); background: var(--ink); color: var(--paper); }
 .btn--primary .btn__circle { background: var(--cream); color: var(--ink); }
+/* על תמונה עם הצללה כהה (מסך פתיחה, כרטיסי שירות): כפתור שמנת עם טקסט כהה, כדי שיבלוט */
+.hero .btn--primary, .service .btn--primary { --btn-fg: var(--ink); background: var(--cream); color: var(--ink); }
+.hero .btn--primary .btn__circle, .service .btn--primary .btn__circle { background: var(--ink); color: var(--cream); }
 .btn--ghost .btn__circle { color: var(--cream); }
 .btn--outline-light:hover { box-shadow: inset 0 0 0 1px var(--cream); }
 
@@ -48,9 +52,6 @@
   .nav__sub a { color: var(--ink); }
 }
 
-/* ---------- פתיח: רקע שמנת ולוגו כהה ---------- */
-.intro { background: var(--cream); }
-.intro__grid span { background: rgba(125, 102, 73, .18); }
 
 /* ---------- מסך פתיחה: תמונה עם הצללה, ההדגשות בשמנת ---------- */
 .hero { --gold-1: var(--cream); --gold-2: var(--cream); }
@@ -65,7 +66,8 @@
 .stats__label::before, .step__bar span { background: var(--accent); }
 
 /* ---------- אזורי פעילות ---------- */
-.areas { color: var(--ink); }
+/* ריווח מתחת לאזורי פעילות: סקשן השירותים נכנס מתחתיו בגובה הקשת, אז מוסיפים את עומק הקשת */
+.areas { color: var(--ink); padding-bottom: calc(var(--section-gap) / 2 + var(--curve)); }
 .areas__title, .areas__card-name, .areas__cta-text { color: var(--ink); }
 .areas__eyebrow { color: var(--accent); }
 .areas__hint, .areas__legend { color: var(--text-muted); }
