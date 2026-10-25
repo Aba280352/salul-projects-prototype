@@ -100,7 +100,7 @@
 .person__role::before { content: ""; width: 36px; height: 1px; background: currentColor; }
 .person__name { margin: 0 0 18px; font-size: var(--h3); font-weight: 700; line-height: 1; color: var(--ink); }
 .person__lead { margin: 0 0 14px; font-size: 20px; font-weight: 500; line-height: 1.5; color: var(--ink); }
-.person__text { margin: 0; font-size: var(--body); font-weight: 300; line-height: 1.6; color: var(--text-muted); }
+.person__text { margin: 0; font-size: var(--body); font-weight: 300; line-height: 1.6; color: var(--ink); }
 .person__points { display: grid; margin: 26px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .person__points li {
   display: flex; align-items: baseline; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line);

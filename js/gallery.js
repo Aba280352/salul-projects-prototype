@@ -50,6 +50,18 @@
       view.addEventListener('pointerenter', function () { paused = true; });
       view.addEventListener('pointerleave', function () { paused = false; setLit(null); });
       view.addEventListener('pointermove', function (e) { setLit(e.target.closest ? e.target.closest('.pgal__card') : null); });
+    } else {
+      // מגע: נגיעה ראשונה בכרטיס מציגה את השם ועוצרת את השורה, נגיעה שנייה באותו כרטיס פותחת את הפרויקט
+      view.addEventListener('click', function (e) {
+        var card = e.target.closest ? e.target.closest('.pgal__card') : null;
+        if (!card || card === lit) return;
+        e.preventDefault();
+        paused = true;
+        setLit(card);
+      });
+      document.addEventListener('click', function (e) {
+        if (lit && !view.contains(e.target)) { setLit(null); paused = false; }
+      });
     }
     // מקלדת: מיקוד עוצר את השורה
     view.addEventListener('focusin', function () { paused = true; });
