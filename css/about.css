@@ -60,3 +60,60 @@
   .about__track { justify-content: center; width: auto; }
   .about__media img { clip-path: none; transform: none; }
 }
+
+/* ---------- גרסה 3: השותפים, אחד מתחת לשני ----------
+   כל שותף בשורה משלו: תמונה אמיתית במסגרת עם פינה גדולה מעוגלת (כמו במת הפרויקטים) ומסגרת קו מוסטת מאחור,
+   ומולה מספר סריף גדול, תפקיד, שם (H3), התיאור המלא ונקודות חוזק. השורות מתחלפות בין ימין לשמאל.
+   על התמונה כפתור חיוג ישיר לשותף. */
+.about__inner { grid-template-columns: minmax(0, 1fr); }
+.about__text { max-width: 760px; }
+
+.people { display: grid; gap: 72px; margin: 72px 0 0; padding: 0 var(--side-pad); }
+.person { display: grid; gap: 32px; align-items: center; }
+
+.person__media { position: relative; z-index: 0; margin: 0; }
+.person__media::before {
+  content: ""; position: absolute; z-index: -1; inset: 18px -14px -18px 14px;
+  border: 1px solid rgba(125, 102, 73, .45); border-radius: 16px 120px 16px 16px;
+}
+.person__media img {
+  display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 22%;
+  border-radius: 16px 120px 16px 16px; background: #FFFFFF;
+}
+.person__media figcaption { position: absolute; bottom: 18px; right: 18px; }
+.person__call {
+  display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px 10px 14px;
+  border-radius: var(--radius-pill); background: rgba(255, 255, 255, .94); box-shadow: 0 14px 30px -16px rgba(0, 25, 43, .4);
+  color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; line-height: 1;
+}
+.person__call svg { width: 18px; height: 18px; flex: none; color: var(--ink); }
+.person__call b { font-weight: 700; }
+.person__call:hover, .person__call:focus-visible { background: var(--ink); color: #FFFFFF; }
+.person__call:hover svg, .person__call:focus-visible svg { color: #FFFFFF; }
+.person__call:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.person__idx {
+  margin: 0 0 -8px; font-family: "Cinzel", "Times New Roman", serif; font-weight: 500;
+  font-size: clamp(64px, 7vw, 120px); line-height: 1; color: rgba(125, 102, 73, .28);
+}
+.person__role { display: flex; align-items: center; gap: 12px; margin: 0 0 10px; font-size: 16px; font-weight: 500; color: var(--accent, #7D6649); }
+.person__role::before { content: ""; width: 36px; height: 1px; background: currentColor; }
+.person__name { margin: 0 0 18px; font-size: var(--h3); font-weight: 700; line-height: 1; color: var(--ink); }
+.person__lead { margin: 0 0 14px; font-size: 20px; font-weight: 500; line-height: 1.5; color: var(--ink); }
+.person__text { margin: 0; font-size: var(--body); font-weight: 300; line-height: 1.6; color: var(--text-muted); }
+.person__points { display: grid; margin: 26px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.person__points li {
+  display: flex; align-items: baseline; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line);
+  font-size: 17px; font-weight: 500; line-height: 1.4; color: var(--ink);
+}
+.person__points li::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--accent, #7D6649); transform: translateY(-2px); }
+
+@media (min-width: 1025px) {
+  .about__text { margin-inline: auto; text-align: center; }
+  .people { gap: 140px; max-width: 1240px; margin: 120px auto 0; padding: 0; }
+  .person { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 7vw; }
+  .person:nth-child(even) .person__media { order: 2; }
+  .person:nth-child(even) .person__media::before { inset: 18px 14px -18px -14px; }
+  .person__media img { aspect-ratio: 4 / 5; }
+  .person__lead { font-size: 22px; }
+}
