@@ -47,6 +47,9 @@
 .nav-toggle, .nav__link, .nav__sub-btn { color: var(--ink); }
 .nav { background: #FFFFFF; }
 .nav__item { border-bottom-color: var(--line); }
+/* תת התפריט (ליזמים) במובייל: היה בטקסט בהיר מהמצב הכהה, לבן על לבן */
+.nav__sub a { color: var(--text-muted); }
+.nav__sub a:hover, .nav__sub a:focus-visible { color: var(--ink); }
 @media (min-width: 1025px) {
   .nav { background: none; }
   .nav__item { border-bottom: 0; }
