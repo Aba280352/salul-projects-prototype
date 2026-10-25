@@ -9,7 +9,7 @@
   background: var(--paper) var(--noise, none); background-size: 180px 180px;
 }
 /* הסקשן האחרון לפני הפוטר מקבל מרווח מלא ועוד גובה העלייה של כרטיס יצירת הקשר, כדי שהמרווח עד הכרטיס יהיה כמו בין כל הסקשנים */
-main > section:last-child, .salul-faq .faq { padding-bottom: calc((var(--section-gap) + var(--curve, 0px)) / 2 + var(--footer-lift)); }
+main > section:last-of-type, .salul-faq .faq { padding-bottom: calc((var(--section-gap) + var(--curve, 0px)) / 2 + var(--footer-lift)); }
 .site-footer .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
 .site-footer__sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 
