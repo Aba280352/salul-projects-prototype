@@ -97,8 +97,7 @@
   margin: 0 0 -8px; font-family: "Cinzel", "Times New Roman", serif; font-weight: 500;
   font-size: clamp(64px, 7vw, 120px); line-height: 1; color: rgba(125, 102, 73, .28);
 }
-.person__role { display: flex; align-items: center; gap: 12px; margin: 0 0 10px; font-size: 16px; font-weight: 500; color: var(--accent, #7D6649); }
-.person__role::before { content: ""; width: 36px; height: 1px; background: currentColor; }
+.person__role { display: block; margin: 0 0 10px; font-size: 16px; font-weight: 500; color: var(--accent, #7D6649); }
 .person__name { margin: 0 0 18px; font-size: var(--h3); font-weight: 700; line-height: 1; color: var(--ink); }
 .person__lead { margin: 0 0 14px; font-size: 20px; font-weight: 500; line-height: 1.5; color: var(--ink); }
 .person__text { margin: 0; font-size: var(--body); font-weight: 300; line-height: 1.6; color: var(--ink); }
