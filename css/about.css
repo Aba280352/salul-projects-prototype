@@ -72,7 +72,7 @@
 .person { display: grid; gap: 32px; align-items: center; }
 
 /* תמונות השותפים בגודל מתון, לא על כל הטור */
-.person__media { position: relative; z-index: 0; width: min(100%, 240px); margin: 0; }
+.person__media { position: relative; z-index: 0; width: min(100%, 300px); margin: 0; }
 .person__media::before {
   content: ""; position: absolute; z-index: -1; inset: 18px -14px -18px 14px;
   border: 1px solid rgba(125, 102, 73, .45); border-radius: 16px 120px 16px 16px;
@@ -112,8 +112,8 @@
 @media (min-width: 1025px) {
   .about__text { margin-inline: auto; text-align: center; }
   .people { gap: 140px; max-width: 1240px; margin: 120px auto 0; padding: 0; }
-  .person { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 6vw; }
-  .person__media { width: min(100%, 360px); justify-self: center; }
+  .person { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 6vw; }
+  .person__media { width: min(100%, 430px); justify-self: center; }
   .person:nth-child(even) .person__media { order: 2; }
   .person:nth-child(even) .person__media::before { inset: 18px 14px -18px -14px; }
   .person__media img { aspect-ratio: 4 / 5; }
