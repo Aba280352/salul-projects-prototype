@@ -69,7 +69,8 @@
 /* ריווח מתחת לאזורי פעילות: סקשן השירותים נכנס מתחתיו בגובה הקשת, אז מוסיפים את עומק הקשת */
 .areas { color: var(--ink); padding-bottom: calc(var(--section-gap) / 2 + var(--curve)); }
 .areas__title, .areas__card-name, .areas__cta-text { color: var(--ink); }
-.areas__eyebrow { color: var(--accent); }
+/* תגית קטנה בכחול הכהה של המותג, כמו שאר התגיות */
+.areas__eyebrow { display: inline-flex; align-items: center; margin-bottom: var(--gap-md); padding: 8px 22px; border-radius: var(--radius-pill); background: var(--ink); color: var(--cream); font-size: 16px; font-weight: 500; line-height: 1.3; letter-spacing: 0; }
 .areas__hint, .areas__legend { color: var(--text-muted); }
 .areas__card { border-color: var(--line); background: #FFFFFF; }
 .areas__card.is-open, .areas__card.is-hot { border-color: rgba(125, 102, 73, .45); background: var(--cream); }
