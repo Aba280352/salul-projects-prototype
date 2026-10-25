@@ -106,6 +106,8 @@ main > section:last-of-type, .salul-faq .faq { padding-bottom: calc((var(--secti
 .site-footer__legal a { color: rgba(254, 254, 254, .8); }
 .site-footer__legal a:hover { color: var(--gold-2); }
 .site-footer__legal { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0; }
+/* מובייל: תקנון, פרטיות, נגישות ומפת אתר בשורה אחת */
+@media (max-width: 1024px) { .site-footer__legal { flex-wrap: nowrap; justify-content: center; gap: 14px; font-size: 13px; white-space: nowrap; } }
 
 @media (min-width: 1025px) {
   .contact-bar {
