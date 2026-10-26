@@ -12,6 +12,8 @@
   --gold-grad: linear-gradient(90deg, var(--cream) 0%, var(--cream) 100%);
   --gold-grad-text: linear-gradient(90deg, var(--accent) 0%, var(--accent) 100%);
   --gold-glow: none;
+  /* בלי צורת גלולה באתר: תגיות, כפתורים, צ׳יפים ופסים בפינות 12px כמו התמונות */
+  --radius-pill: var(--radius);
 }
 
 /* טקסט בגרדיאנט זהב: עכשיו צבע טאופ אחיד */
