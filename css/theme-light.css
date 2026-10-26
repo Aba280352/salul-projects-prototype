@@ -147,3 +147,7 @@
 
 /* HAR SALUL בפוטר: קטן יותר וממורכז, בלי לחרוג מהמסך */
 .site-footer__mark { margin-inline: 0; font-size: clamp(40px, 10.5vw, 190px); text-align: center; }
+
+/* מסך פתיחה: כפתור "מחפשים דירה" לבן עם טקסט וחץ כהים, במקום זכוכית שקופה */
+.hero .btn--glass { --btn-fg: var(--ink); background: #FFFFFF; color: var(--ink); box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.hero .btn--glass:hover { background: var(--cream); }
