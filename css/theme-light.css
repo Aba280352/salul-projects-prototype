@@ -154,3 +154,6 @@
 /* מסך פתיחה: כפתור "מחפשים דירה" לבן עם טקסט וחץ כהים, במקום זכוכית שקופה */
 .hero .btn--glass { --btn-fg: var(--ink); background: #FFFFFF; color: var(--ink); box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
 .hero .btn--glass:hover { background: var(--cream); }
+
+/* כפתורים ופסי טפסים: פינות 12px כמו התמונות, לא גלולה */
+.search__bar, .contact-bar__fields, .search__type label { border-radius: var(--radius) !important; }
