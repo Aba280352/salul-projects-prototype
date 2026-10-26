@@ -153,9 +153,14 @@
 /* HAR SALUL בפוטר: קטן יותר וממורכז, בלי לחרוג מהמסך */
 .site-footer__mark { margin-inline: 0; font-size: clamp(40px, 10.5vw, 190px); text-align: center; }
 
-/* מסך פתיחה: כפתור "מחפשים דירה" לבן עם טקסט וחץ כהים, במקום זכוכית שקופה */
-.hero .btn--glass { --btn-fg: var(--ink); background: #FFFFFF; color: var(--ink); box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
-.hero .btn--glass:hover { background: var(--cream); }
+/* מסך פתיחה: כפתור "מחפשים דירה" זכוכית בולטת: טשטוש חזק, שכבה כהה עדינה וקו בהיר, טקסט וחץ לבנים */
+.hero .btn--glass {
+  --btn-fg: #FFFFFF; color: #FFFFFF;
+  background: rgba(255, 255, 255, .16);
+  -webkit-backdrop-filter: blur(22px) saturate(160%); backdrop-filter: blur(22px) saturate(160%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .45), 0 10px 30px -12px rgba(0, 25, 43, .45);
+}
+.hero .btn--glass:hover { background: rgba(255, 255, 255, .26); }
 
 /* כפתורים ופסי טפסים: פינות 12px כמו התמונות, לא גלולה */
 .search__bar, .contact-bar__fields, .search__type label { border-radius: var(--radius) !important; }
