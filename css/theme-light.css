@@ -164,3 +164,7 @@
 
 /* כפתורים ופסי טפסים: פינות 12px כמו התמונות, לא גלולה */
 .search__bar, .contact-bar__fields, .search__type label { border-radius: var(--radius) !important; }
+
+/* תפריט המובייל: בלי פס גלילה אפור בצד, כדי שהרקע הלבן ימלא את כל הרוחב */
+.nav { scrollbar-width: none; -ms-overflow-style: none; }
+.nav::-webkit-scrollbar { display: none; width: 0; }
